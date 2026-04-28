@@ -26,7 +26,6 @@
       --ltp-blue-2: #123f69;
       --ltp-gold: #c9a55b;
       --ltp-green: #2f7d5c;
-      --ltp-orange: #d97836;
       --ltp-dark: #111827;
       --ltp-muted: #64748b;
       --ltp-light: #f5f7fa;
@@ -36,9 +35,7 @@
       --transition: all .35s ease;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -48,9 +45,7 @@
       overflow-x: hidden;
     }
 
-    a {
-      text-decoration: none;
-    }
+    a { text-decoration: none; }
 
     .navbar {
       background: rgba(255,255,255,.92);
@@ -60,9 +55,7 @@
       z-index: 1030;
     }
 
-    .navbar.scrolled {
-      box-shadow: 0 18px 45px rgba(15, 23, 42, .08);
-    }
+    .navbar.scrolled { box-shadow: 0 18px 45px rgba(15, 23, 42, .08); }
 
     .navbar-brand {
       display: flex;
@@ -114,9 +107,7 @@
     }
 
     .nav-link:hover,
-    .nav-link.active {
-      color: var(--ltp-blue);
-    }
+    .nav-link.active { color: var(--ltp-blue); }
 
     .btn-premium {
       display: inline-flex;
@@ -248,9 +239,7 @@
       border-right: 1px solid rgba(255,255,255,.1);
     }
 
-    .hero-stat:last-child {
-      border-right: 0;
-    }
+    .hero-stat:last-child { border-right: 0; }
 
     .hero-stat strong {
       display: block;
@@ -265,13 +254,9 @@
       font-weight: 600;
     }
 
-    section {
-      padding: 105px 0;
-    }
+    section { padding: 105px 0; }
 
-    .section-light {
-      background: var(--ltp-light);
-    }
+    .section-light { background: var(--ltp-light); }
 
     .section-title {
       max-width: 760px;
@@ -301,19 +286,25 @@
       line-height: 1.75;
     }
 
-    .corporate-card {
+    .corporate-card,
+    .service-card,
+    .testimonial-card {
       height: 100%;
-      padding: 34px;
       border: 1px solid var(--ltp-border);
-      border-radius: 30px;
       background: #fff;
       box-shadow: var(--shadow-soft);
       transition: var(--transition);
     }
 
-    .corporate-card:hover {
+    .corporate-card:hover,
+    .service-card:hover {
       transform: translateY(-8px);
       box-shadow: var(--shadow-premium);
+    }
+
+    .corporate-card {
+      padding: 34px;
+      border-radius: 30px;
     }
 
     .icon-box {
@@ -328,14 +319,17 @@
       font-size: 1.55rem;
     }
 
-    .corporate-card h3 {
+    .corporate-card h3,
+    .service-card h3 {
       margin-bottom: 12px;
       font-size: 1.24rem;
       font-weight: 900;
       letter-spacing: -.035em;
     }
 
-    .corporate-card p {
+    .corporate-card p,
+    .service-card p,
+    .testimonial-card p {
       margin: 0;
       color: var(--ltp-muted);
       line-height: 1.7;
@@ -377,20 +371,11 @@
     }
 
     .service-card {
-      height: 100%;
       padding: 30px;
       border-radius: 28px;
-      background: #fff;
-      border: 1px solid var(--ltp-border);
-      box-shadow: var(--shadow-soft);
-      transition: var(--transition);
     }
 
-    .service-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(201,165,91,.4);
-      box-shadow: var(--shadow-premium);
-    }
+    .service-card:hover { border-color: rgba(201,165,91,.4); }
 
     .service-card i {
       color: var(--ltp-gold);
@@ -400,16 +385,9 @@
     .service-card h3 {
       margin: 18px 0 11px;
       font-size: 1.13rem;
-      font-weight: 900;
-      letter-spacing: -.03em;
     }
 
-    .service-card p {
-      margin: 0;
-      color: var(--ltp-muted);
-      line-height: 1.65;
-      font-size: .96rem;
-    }
+    .service-card p { font-size: .96rem; }
 
     .project-card {
       position: relative;
@@ -428,9 +406,7 @@
       transition: transform .7s ease;
     }
 
-    .project-card:hover img {
-      transform: scale(1.08);
-    }
+    .project-card:hover img { transform: scale(1.08); }
 
     .project-card::after {
       content: "";
@@ -480,9 +456,7 @@
     }
 
     .mines-section .section-title h2,
-    .mines-section .section-title p {
-      color: #fff;
-    }
+    .mines-section .section-title p { color: #fff; }
 
     .mines-grid {
       display: grid;
@@ -575,18 +549,11 @@
     }
 
     .testimonial-card {
-      height: 100%;
       padding: 34px;
       border-radius: 30px;
-      background: #fff;
-      border: 1px solid var(--ltp-border);
-      box-shadow: var(--shadow-soft);
     }
 
-    .testimonial-card p {
-      color: var(--ltp-muted);
-      line-height: 1.8;
-    }
+    .testimonial-card p { line-height: 1.8; }
 
     .stars {
       color: var(--ltp-gold);
@@ -660,13 +627,8 @@
       transition: var(--transition);
     }
 
-    .floating-contact a:nth-child(2) {
-      background: var(--ltp-blue);
-    }
-
-    .floating-contact a:nth-child(3) {
-      background: var(--ltp-gold);
-    }
+    .floating-contact a:nth-child(2) { background: var(--ltp-blue); }
+    .floating-contact a:nth-child(3) { background: var(--ltp-gold); }
 
     .floating-contact a:hover {
       transform: translateY(-4px);
@@ -684,47 +646,35 @@
       transform: translateY(0);
     }
 
-    @media (max-width: 991.98px) {
+    @media (max-width: 1199.98px) {
       .navbar-collapse {
         padding: 20px 0;
       }
+    }
 
-      .hero {
-        min-height: auto;
-      }
+    @media (max-width: 991.98px) {
+      .hero { min-height: auto; }
 
       .hero-stat {
         border-right: 0;
         border-bottom: 1px solid rgba(255,255,255,.1);
       }
 
-      .mines-grid {
-        grid-template-columns: 1fr;
-      }
+      .mines-grid { grid-template-columns: 1fr; }
 
       .about-image,
-      .about-image img {
-        min-height: 420px;
-      }
+      .about-image img { min-height: 420px; }
     }
 
     @media (max-width: 575.98px) {
-      section {
-        padding: 75px 0;
-      }
+      section { padding: 75px 0; }
 
-      .hero {
-        padding-top: 125px;
-      }
+      .hero { padding-top: 125px; }
 
       .hero-actions .btn-premium,
-      .hero-actions .btn-outline-premium {
-        width: 100%;
-      }
+      .hero-actions .btn-outline-premium { width: 100%; }
 
-      .contact-band {
-        padding: 30px;
-      }
+      .contact-band { padding: 30px; }
 
       .floating-contact {
         right: 14px;
@@ -758,7 +708,6 @@
           <li class="nav-item"><a class="nav-link" href="mines-infrastructures.html">Mines & Infrastructures</a></li>
           <li class="nav-item"><a class="nav-link" href="blog.html">Actualités</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="en/index.html">EN</a></li>
           <li class="nav-item"><a class="btn-outline-premium ms-xl-2" href="../index.html">Changer de pays</a></li>
           <li class="nav-item"><a class="btn-premium ms-xl-2" href="devis.html">Demander un devis</a></li>
         </ul>
@@ -776,46 +725,17 @@
       </p>
 
       <div class="hero-actions reveal">
-        <a class="btn-premium" href="devis.html">
-          <i class="bi bi-file-earmark-text"></i>
-          Demander un devis
-        </a>
-        <a class="btn-outline-premium" href="projets.html">
-          <i class="bi bi-buildings"></i>
-          Voir nos projets
-        </a>
-        <a class="btn-outline-premium" href="https://wa.me/224000000000">
-          <i class="bi bi-whatsapp"></i>
-          WhatsApp Business
-        </a>
+        <a class="btn-premium" href="devis.html"><i class="bi bi-file-earmark-text"></i>Demander un devis</a>
+        <a class="btn-outline-premium" href="projets.html"><i class="bi bi-buildings"></i>Voir nos projets</a>
+        <a class="btn-outline-premium" href="https://wa.me/224000000000"><i class="bi bi-whatsapp"></i>WhatsApp Business</a>
       </div>
 
       <div class="hero-stats reveal">
         <div class="row g-0">
-          <div class="col-md-3">
-            <div class="hero-stat">
-              <strong>10+</strong>
-              <span>Secteurs d’intervention</span>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="hero-stat">
-              <strong>2</strong>
-              <span>Pays de présence</span>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="hero-stat">
-              <strong>360°</strong>
-              <span>Solutions chantier</span>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="hero-stat">
-              <strong>24h</strong>
-              <span>Réponse commerciale</span>
-            </div>
-          </div>
+          <div class="col-md-3"><div class="hero-stat"><strong>10+</strong><span>Secteurs d’intervention</span></div></div>
+          <div class="col-md-3"><div class="hero-stat"><strong>2</strong><span>Pays de présence</span></div></div>
+          <div class="col-md-3"><div class="hero-stat"><strong>360°</strong><span>Solutions chantier</span></div></div>
+          <div class="col-md-3"><div class="hero-stat"><strong>24h</strong><span>Réponse commerciale</span></div></div>
         </div>
       </div>
     </div>
@@ -864,7 +784,8 @@
       </div>
     </div>
   </section>
-    <section class="section-light">
+
+  <section class="section-light">
     <div class="container">
       <div class="section-title reveal">
         <span class="section-kicker">Nos services</span>
@@ -876,76 +797,18 @@
       </div>
 
       <div class="row g-4">
-        <div class="col-md-6 col-xl-3 reveal">
-          <div class="service-card">
-            <i class="bi bi-building"></i>
-            <h3>Construction bâtiments</h3>
-            <p>Bâtiments professionnels, résidentiels, administratifs et ouvrages techniques.</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-xl-3 reveal">
-          <div class="service-card">
-            <i class="bi bi-signpost-split"></i>
-            <h3>Routes & voiries</h3>
-            <p>Travaux routiers, accès chantier, voiries urbaines et routes industrielles.</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-xl-3 reveal">
-          <div class="service-card">
-            <i class="bi bi-bricks"></i>
-            <h3>Génie civil</h3>
-            <p>Ouvrages structurants, plateformes, fondations, murs et infrastructures lourdes.</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-xl-3 reveal">
-          <div class="service-card">
-            <i class="bi bi-truck"></i>
-            <h3>Terrassement</h3>
-            <p>Préparation de terrains, nivellement, décapage et mouvements de terre.</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-xl-3 reveal">
-          <div class="service-card">
-            <i class="bi bi-droplet"></i>
-            <h3>Forage</h3>
-            <p>Solutions techniques pour besoins hydrauliques, industriels et chantier.</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-xl-3 reveal">
-          <div class="service-card">
-            <i class="bi bi-box-seam"></i>
-            <h3>Fourniture matériaux</h3>
-            <p>Approvisionnement en matériaux, équipements et fournitures techniques.</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-xl-3 reveal">
-          <div class="service-card">
-            <i class="bi bi-tools"></i>
-            <h3>Maintenance industrielle</h3>
-            <p>Support technique, maintenance, interventions et solutions opérationnelles.</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-xl-3 reveal">
-          <div class="service-card">
-            <i class="bi bi-clipboard-data"></i>
-            <h3>Gestion de projets</h3>
-            <p>Coordination, planification, suivi opérationnel et contrôle d’exécution.</p>
-          </div>
-        </div>
+        <div class="col-md-6 col-xl-3 reveal"><div class="service-card"><i class="bi bi-building"></i><h3>Construction bâtiments</h3><p>Bâtiments professionnels, résidentiels, administratifs et ouvrages techniques.</p></div></div>
+        <div class="col-md-6 col-xl-3 reveal"><div class="service-card"><i class="bi bi-signpost-split"></i><h3>Routes & voiries</h3><p>Travaux routiers, accès chantier, voiries urbaines et routes industrielles.</p></div></div>
+        <div class="col-md-6 col-xl-3 reveal"><div class="service-card"><i class="bi bi-bricks"></i><h3>Génie civil</h3><p>Ouvrages structurants, plateformes, fondations, murs et infrastructures lourdes.</p></div></div>
+        <div class="col-md-6 col-xl-3 reveal"><div class="service-card"><i class="bi bi-truck"></i><h3>Terrassement</h3><p>Préparation de terrains, nivellement, décapage et mouvements de terre.</p></div></div>
+        <div class="col-md-6 col-xl-3 reveal"><div class="service-card"><i class="bi bi-droplet"></i><h3>Forage</h3><p>Solutions techniques pour besoins hydrauliques, industriels et chantier.</p></div></div>
+        <div class="col-md-6 col-xl-3 reveal"><div class="service-card"><i class="bi bi-box-seam"></i><h3>Fourniture matériaux</h3><p>Approvisionnement en matériaux, équipements et fournitures techniques.</p></div></div>
+        <div class="col-md-6 col-xl-3 reveal"><div class="service-card"><i class="bi bi-tools"></i><h3>Maintenance industrielle</h3><p>Support technique, maintenance, interventions et solutions opérationnelles.</p></div></div>
+        <div class="col-md-6 col-xl-3 reveal"><div class="service-card"><i class="bi bi-clipboard-data"></i><h3>Gestion de projets</h3><p>Coordination, planification, suivi opérationnel et contrôle d’exécution.</p></div></div>
       </div>
 
       <div class="text-center mt-5 reveal">
-        <a class="btn-premium" href="services.html">
-          Voir tous les services
-          <i class="bi bi-arrow-right"></i>
-        </a>
+        <a class="btn-premium" href="services.html">Voir tous les services <i class="bi bi-arrow-right"></i></a>
       </div>
     </div>
   </section>
@@ -965,42 +828,27 @@
         <div class="col-lg-4 reveal">
           <article class="project-card">
             <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=85" alt="Projet bâtiment professionnel">
-            <div class="project-content">
-              <span>Bâtiments professionnels</span>
-              <h3>Complexes administratifs</h3>
-              <p>Construction et aménagement de bâtiments adaptés aux besoins des entreprises et institutions.</p>
-            </div>
+            <div class="project-content"><span>Bâtiments professionnels</span><h3>Complexes administratifs</h3><p>Construction et aménagement de bâtiments adaptés aux besoins des entreprises et institutions.</p></div>
           </article>
         </div>
 
         <div class="col-lg-4 reveal">
           <article class="project-card">
             <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=900&q=85" alt="Projet industriel et minier">
-            <div class="project-content">
-              <span>Mines & industrie</span>
-              <h3>Zones techniques lourdes</h3>
-              <p>Infrastructures, bases vie, plateformes et logistique chantier pour environnements exigeants.</p>
-            </div>
+            <div class="project-content"><span>Mines & industrie</span><h3>Zones techniques lourdes</h3><p>Infrastructures, bases vie, plateformes et logistique chantier pour environnements exigeants.</p></div>
           </article>
         </div>
 
         <div class="col-lg-4 reveal">
           <article class="project-card">
             <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=900&q=85" alt="Projet immobilier">
-            <div class="project-content">
-              <span>Immobilier</span>
-              <h3>Programmes résidentiels</h3>
-              <p>Solutions immobilières modernes avec une approche durable, fonctionnelle et professionnelle.</p>
-            </div>
+            <div class="project-content"><span>Immobilier</span><h3>Programmes résidentiels</h3><p>Solutions immobilières modernes avec une approche durable, fonctionnelle et professionnelle.</p></div>
           </article>
         </div>
       </div>
 
       <div class="text-center mt-5 reveal">
-        <a class="btn-outline-premium" href="projets.html">
-          Découvrir les projets
-          <i class="bi bi-arrow-right"></i>
-        </a>
+        <a class="btn-outline-premium" href="projets.html">Découvrir les projets <i class="bi bi-arrow-right"></i></a>
       </div>
     </div>
   </section>
@@ -1016,57 +864,25 @@
               LTP Construction Guinée peut se présenter comme partenaire technique pour les infrastructures
               liées aux mines, routes minières, bases vie, génie civil industriel et logistique chantier lourd.
             </p>
-
-            <a class="btn-premium mt-3" href="mines-infrastructures.html">
-              Voir l’expertise mines
-              <i class="bi bi-arrow-right"></i>
-            </a>
+            <a class="btn-premium mt-3" href="mines-infrastructures.html">Voir l’expertise mines <i class="bi bi-arrow-right"></i></a>
           </div>
         </div>
 
         <div class="col-lg-7 reveal">
           <div class="mines-grid">
-            <div class="mine-item">
-              <i class="bi bi-house-gear"></i>
-              <h3>Bases vie</h3>
-              <p>Espaces fonctionnels pour équipes, encadrement et opérations terrain.</p>
-            </div>
-
-            <div class="mine-item">
-              <i class="bi bi-signpost"></i>
-              <h3>Routes minières</h3>
-              <p>Accès lourds, plateformes et voies de circulation pour sites industriels.</p>
-            </div>
-
-            <div class="mine-item">
-              <i class="bi bi-buildings"></i>
-              <h3>Structures métalliques</h3>
-              <p>Solutions adaptées aux installations techniques et zones industrielles.</p>
-            </div>
-
-            <div class="mine-item">
-              <i class="bi bi-truck-front"></i>
-              <h3>Logistique chantier</h3>
-              <p>Transport, approvisionnement, coordination et support opérationnel.</p>
-            </div>
-
-            <div class="mine-item">
-              <i class="bi bi-bricks"></i>
-              <h3>Génie civil industriel</h3>
-              <p>Fondations, plateformes, murs, ouvrages et infrastructures spécialisées.</p>
-            </div>
-
-            <div class="mine-item">
-              <i class="bi bi-shield-check"></i>
-              <h3>Sécurité & conformité</h3>
-              <p>Approche sérieuse pour les sites à fortes exigences opérationnelles.</p>
-            </div>
+            <div class="mine-item"><i class="bi bi-house-gear"></i><h3>Bases vie</h3><p>Espaces fonctionnels pour équipes, encadrement et opérations terrain.</p></div>
+            <div class="mine-item"><i class="bi bi-signpost"></i><h3>Routes minières</h3><p>Accès lourds, plateformes et voies de circulation pour sites industriels.</p></div>
+            <div class="mine-item"><i class="bi bi-buildings"></i><h3>Structures métalliques</h3><p>Solutions adaptées aux installations techniques et zones industrielles.</p></div>
+            <div class="mine-item"><i class="bi bi-truck-front"></i><h3>Logistique chantier</h3><p>Transport, approvisionnement, coordination et support opérationnel.</p></div>
+            <div class="mine-item"><i class="bi bi-bricks"></i><h3>Génie civil industriel</h3><p>Fondations, plateformes, murs, ouvrages et infrastructures spécialisées.</p></div>
+            <div class="mine-item"><i class="bi bi-shield-check"></i><h3>Sécurité & conformité</h3><p>Approche sérieuse pour les sites à fortes exigences opérationnelles.</p></div>
           </div>
         </div>
       </div>
     </div>
   </section>
-    <section class="section-light">
+
+  <section class="section-light">
     <div class="container">
       <div class="row align-items-center g-5">
         <div class="col-lg-6 reveal">
@@ -1082,69 +898,19 @@
 
         <div class="col-lg-6 reveal">
           <div class="why-list">
-            <div class="why-item">
-              <i class="bi bi-check2-circle"></i>
-              <div>
-                <h3>Positionnement haut de gamme</h3>
-                <p>Une image corporate pensée pour inspirer confiance aux investisseurs et grands clients.</p>
-              </div>
-            </div>
-
-            <div class="why-item">
-              <i class="bi bi-people"></i>
-              <div>
-                <h3>Vision partenariale</h3>
-                <p>Capacité à travailler avec entreprises, institutions, donneurs d’ordre et partenaires internationaux.</p>
-              </div>
-            </div>
-
-            <div class="why-item">
-              <i class="bi bi-speedometer2"></i>
-              <div>
-                <h3>Réactivité commerciale</h3>
-                <p>Accès rapide aux demandes de devis, WhatsApp Business, appel direct et formulaire de contact.</p>
-              </div>
-            </div>
-
-            <div class="why-item">
-              <i class="bi bi-globe2"></i>
-              <div>
-                <h3>Ambition régionale</h3>
-                <p>Présence Guinée et Cameroun, avec une vision Afrique de l’Ouest et Afrique Centrale.</p>
-              </div>
-            </div>
+            <div class="why-item"><i class="bi bi-check2-circle"></i><div><h3>Positionnement haut de gamme</h3><p>Une image corporate pensée pour inspirer confiance aux investisseurs et grands clients.</p></div></div>
+            <div class="why-item"><i class="bi bi-people"></i><div><h3>Vision partenariale</h3><p>Capacité à travailler avec entreprises, institutions, donneurs d’ordre et partenaires internationaux.</p></div></div>
+            <div class="why-item"><i class="bi bi-speedometer2"></i><div><h3>Réactivité commerciale</h3><p>Accès rapide aux demandes de devis, WhatsApp Business, appel direct et formulaire de contact.</p></div></div>
+            <div class="why-item"><i class="bi bi-globe2"></i><div><h3>Ambition régionale</h3><p>Présence Guinée et Cameroun, avec une vision Afrique de l’Ouest et Afrique Centrale.</p></div></div>
           </div>
         </div>
       </div>
 
       <div class="row g-4 mt-5">
-        <div class="col-md-6 col-xl-3 reveal">
-          <div class="counter-card">
-            <strong data-count="10">0</strong>
-            <span>Métiers complémentaires</span>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-xl-3 reveal">
-          <div class="counter-card">
-            <strong data-count="2">0</strong>
-            <span>Pays de présence</span>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-xl-3 reveal">
-          <div class="counter-card">
-            <strong data-count="100">0</strong>
-            <span>% orientation client</span>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-xl-3 reveal">
-          <div class="counter-card">
-            <strong data-count="24">0</strong>
-            <span>Heures pour répondre</span>
-          </div>
-        </div>
+        <div class="col-md-6 col-xl-3 reveal"><div class="counter-card"><strong data-count="10">0</strong><span>Métiers complémentaires</span></div></div>
+        <div class="col-md-6 col-xl-3 reveal"><div class="counter-card"><strong data-count="2">0</strong><span>Pays de présence</span></div></div>
+        <div class="col-md-6 col-xl-3 reveal"><div class="counter-card"><strong data-count="100">0</strong><span>% orientation client</span></div></div>
+        <div class="col-md-6 col-xl-3 reveal"><div class="counter-card"><strong data-count="24">0</strong><span>Heures pour répondre</span></div></div>
       </div>
     </div>
   </section>
@@ -1163,16 +929,8 @@
       <div class="row g-4">
         <div class="col-lg-4 reveal">
           <div class="testimonial-card">
-            <div class="stars">
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-            </div>
-            <p>
-              “Une entreprise avec une présentation sérieuse, structurée et adaptée aux projets d’envergure.”
-            </p>
+            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+            <p>“Une entreprise avec une présentation sérieuse, structurée et adaptée aux projets d’envergure.”</p>
             <h3 class="h6 fw-bold mb-0">Direction projet</h3>
             <small class="text-secondary">Secteur privé</small>
           </div>
@@ -1180,16 +938,8 @@
 
         <div class="col-lg-4 reveal">
           <div class="testimonial-card">
-            <div class="stars">
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-            </div>
-            <p>
-              “Le positionnement inspire confiance pour des collaborations BTP, infrastructures et logistique.”
-            </p>
+            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+            <p>“Le positionnement inspire confiance pour des collaborations BTP, infrastructures et logistique.”</p>
             <h3 class="h6 fw-bold mb-0">Partenaire technique</h3>
             <small class="text-secondary">Infrastructures</small>
           </div>
@@ -1197,16 +947,8 @@
 
         <div class="col-lg-4 reveal">
           <div class="testimonial-card">
-            <div class="stars">
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-            </div>
-            <p>
-              “Une image professionnelle, crédible et claire pour convaincre des clients institutionnels.”
-            </p>
+            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+            <p>“Une image professionnelle, crédible et claire pour convaincre des clients institutionnels.”</p>
             <h3 class="h6 fw-bold mb-0">Consultant business</h3>
             <small class="text-secondary">Développement Afrique</small>
           </div>
@@ -1229,18 +971,9 @@
 
           <div class="col-lg-5">
             <div class="d-flex flex-wrap gap-3 justify-content-lg-end">
-              <a class="btn-premium" href="devis.html">
-                <i class="bi bi-file-earmark-text"></i>
-                Demande de devis
-              </a>
-              <a class="btn-outline-premium" href="contact.html">
-                <i class="bi bi-envelope"></i>
-                Contact
-              </a>
-              <a class="btn-outline-premium" href="https://wa.me/224000000000">
-                <i class="bi bi-whatsapp"></i>
-                WhatsApp
-              </a>
+              <a class="btn-premium" href="devis.html"><i class="bi bi-file-earmark-text"></i>Demande de devis</a>
+              <a class="btn-outline-premium" href="contact.html"><i class="bi bi-envelope"></i>Contact</a>
+              <a class="btn-outline-premium" href="https://wa.me/224000000000"><i class="bi bi-whatsapp"></i>WhatsApp</a>
             </div>
           </div>
         </div>
@@ -1293,15 +1026,9 @@
   </footer>
 
   <aside class="floating-contact" aria-label="Contacts rapides">
-    <a href="https://wa.me/224000000000" aria-label="WhatsApp Business">
-      <i class="bi bi-whatsapp"></i>
-    </a>
-    <a href="tel:+224000000000" aria-label="Appeler LTP Construction">
-      <i class="bi bi-telephone"></i>
-    </a>
-    <a href="devis.html" aria-label="Demander un devis">
-      <i class="bi bi-file-earmark-text"></i>
-    </a>
+    <a href="https://wa.me/224000000000" aria-label="WhatsApp Business"><i class="bi bi-whatsapp"></i></a>
+    <a href="tel:+224000000000" aria-label="Appeler LTP Construction"><i class="bi bi-telephone"></i></a>
+    <a href="devis.html" aria-label="Demander un devis"><i class="bi bi-file-earmark-text"></i></a>
   </aside>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
