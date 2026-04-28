@@ -1,0 +1,921 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demande de devis | LTP Construction Guinée</title>
+  <meta name="description" content="Demandez un devis à LTP Construction Guinée pour vos projets de construction, BTP, génie civil, mines, infrastructures, routes, immobilier et logistique chantier.">
+  <meta name="keywords" content="devis construction Guinée, devis BTP Guinée, entreprise BTP Conakry, devis génie civil Guinée, devis travaux publics Guinée, devis mines Guinée">
+  <meta property="og:title" content="Demande de devis | LTP Construction Guinée">
+  <meta property="og:description" content="Envoyez votre demande de devis pour un projet BTP, infrastructure, mines, routes ou génie civil en Guinée.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=85">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --ltp-blue: #0b2d4d;
+      --ltp-blue-2: #123f69;
+      --ltp-gold: #c9a55b;
+      --ltp-green: #2f7d5c;
+      --ltp-dark: #111827;
+      --ltp-muted: #64748b;
+      --ltp-light: #f5f7fa;
+      --ltp-border: #e5eaf0;
+      --shadow-soft: 0 20px 60px rgba(15, 23, 42, .08);
+      --shadow-premium: 0 30px 90px rgba(15, 23, 42, .14);
+      --transition: all .35s ease;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--ltp-dark);
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; }
+
+    .navbar {
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(229,234,240,.82);
+      transition: var(--transition);
+      z-index: 1030;
+    }
+
+    .navbar.scrolled { box-shadow: 0 18px 45px rgba(15, 23, 42, .08); }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: -.04em;
+      color: var(--ltp-blue);
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--ltp-blue), var(--ltp-blue-2));
+      box-shadow: 0 14px 30px rgba(11, 45, 77, .25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      width: 70%;
+      height: 3px;
+      bottom: 10px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--ltp-gold), var(--ltp-green));
+    }
+
+    .brand-sub {
+      display: block;
+      margin-top: 1px;
+      color: var(--ltp-muted);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .nav-link {
+      color: #263445;
+      font-weight: 700;
+      font-size: .94rem;
+      transition: var(--transition);
+    }
+
+    .nav-link:hover,
+    .nav-link.active { color: var(--ltp-blue); }
+
+    .btn-premium {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 0;
+      border-radius: 999px;
+      padding: 13px 21px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--ltp-blue), var(--ltp-blue-2));
+      font-weight: 800;
+      box-shadow: 0 18px 38px rgba(11, 45, 77, .22);
+      transition: var(--transition);
+    }
+
+    .btn-premium:hover {
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 22px 46px rgba(11, 45, 77, .3);
+    }
+
+    .btn-outline-premium {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 1px solid rgba(11, 45, 77, .18);
+      border-radius: 999px;
+      padding: 12px 20px;
+      color: var(--ltp-blue);
+      background: rgba(255,255,255,.88);
+      font-weight: 800;
+      transition: var(--transition);
+    }
+
+    .btn-outline-premium:hover {
+      color: #fff;
+      background: var(--ltp-blue);
+      transform: translateY(-3px);
+    }
+
+    .page-hero {
+      position: relative;
+      min-height: 72vh;
+      display: grid;
+      align-items: center;
+      padding: 150px 0 90px;
+      color: #fff;
+      overflow: hidden;
+      background:
+        linear-gradient(105deg, rgba(5, 17, 31, .96) 0%, rgba(11, 45, 77, .84) 52%, rgba(11, 45, 77, .34) 100%),
+        url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1920&q=85") center/cover no-repeat;
+    }
+
+    .page-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 16% 25%, rgba(201,165,91,.22), transparent 25%),
+        radial-gradient(circle at 84% 78%, rgba(47,125,92,.18), transparent 28%);
+    }
+
+    .page-hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .breadcrumb-premium {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      color: rgba(255,255,255,.88);
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.16);
+      backdrop-filter: blur(12px);
+      font-size: .82rem;
+      font-weight: 800;
+    }
+
+    .breadcrumb-premium a { color: #fff; }
+
+    .page-hero h1 {
+      max-width: 980px;
+      margin: 26px 0 22px;
+      font-size: clamp(3rem, 7vw, 6.3rem);
+      line-height: .92;
+      font-weight: 900;
+      letter-spacing: -.075em;
+    }
+
+    .page-hero p {
+      max-width: 770px;
+      color: rgba(255,255,255,.78);
+      font-size: clamp(1.05rem, 1.8vw, 1.32rem);
+      line-height: 1.75;
+    }
+
+    section { padding: 105px 0; }
+
+    .section-light { background: var(--ltp-light); }
+
+    .section-title {
+      max-width: 820px;
+      margin-bottom: 52px;
+    }
+
+    .section-kicker {
+      color: var(--ltp-gold);
+      font-weight: 900;
+      font-size: .82rem;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+
+    .section-title h2 {
+      margin: 12px 0 15px;
+      color: var(--ltp-dark);
+      font-size: clamp(2.2rem, 4.2vw, 4rem);
+      line-height: 1.02;
+      font-weight: 900;
+      letter-spacing: -.06em;
+    }
+
+    .section-title p {
+      color: var(--ltp-muted);
+      font-size: 1.08rem;
+      line-height: 1.75;
+    }
+
+    .quote-card {
+      padding: 42px;
+      border-radius: 36px;
+      background: #fff;
+      border: 1px solid var(--ltp-border);
+      box-shadow: var(--shadow-premium);
+    }
+
+    .form-label {
+      font-weight: 800;
+      color: #263445;
+      margin-bottom: 9px;
+    }
+
+    .form-control,
+    .form-select {
+      min-height: 54px;
+      border-radius: 17px;
+      border: 1px solid var(--ltp-border);
+      color: var(--ltp-dark);
+      box-shadow: none;
+      padding: 13px 16px;
+      font-weight: 600;
+    }
+
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+      border-color: rgba(11,45,77,.45);
+      box-shadow: 0 0 0 .25rem rgba(11,45,77,.08);
+    }
+
+    .side-panel {
+      position: sticky;
+      top: 110px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .contact-card,
+    .trust-card {
+      padding: 30px;
+      border-radius: 30px;
+      background: #fff;
+      border: 1px solid var(--ltp-border);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-card {
+      color: #fff;
+      background:
+        linear-gradient(135deg, rgba(11,45,77,.96), rgba(18,63,105,.92)),
+        url("https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=900&q=85") center/cover no-repeat;
+      border: 0;
+    }
+
+    .contact-card h3,
+    .trust-card h3 {
+      font-weight: 900;
+      letter-spacing: -.04em;
+      margin-bottom: 14px;
+    }
+
+    .contact-card p {
+      color: rgba(255,255,255,.72);
+      line-height: 1.7;
+    }
+
+    .contact-link {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      color: #fff;
+      padding: 14px 0;
+      border-top: 1px solid rgba(255,255,255,.13);
+      font-weight: 800;
+    }
+
+    .contact-link:hover { color: #fff; }
+
+    .contact-link i {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: rgba(255,255,255,.12);
+      color: var(--ltp-gold);
+    }
+
+    .trust-list {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .trust-list li {
+      display: flex;
+      gap: 12px;
+      color: var(--ltp-muted);
+      line-height: 1.55;
+      font-weight: 650;
+    }
+
+    .trust-list i {
+      color: var(--ltp-green);
+      flex: 0 0 auto;
+      margin-top: 2px;
+    }
+
+    .need-card {
+      height: 100%;
+      padding: 30px;
+      border-radius: 28px;
+      background: #fff;
+      border: 1px solid var(--ltp-border);
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition);
+    }
+
+    .need-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-premium);
+      border-color: rgba(201,165,91,.42);
+    }
+
+    .need-card i {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      border-radius: 19px;
+      color: var(--ltp-blue);
+      background: linear-gradient(135deg, #eef5fb, #fff8e8);
+      font-size: 1.55rem;
+    }
+
+    .need-card h3 {
+      font-weight: 900;
+      letter-spacing: -.035em;
+      margin-bottom: 10px;
+    }
+
+    .need-card p {
+      color: var(--ltp-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .process-card {
+      height: 100%;
+      padding: 30px;
+      border-radius: 28px;
+      border: 1px solid var(--ltp-border);
+      background: #fff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .process-number {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      border-radius: 16px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--ltp-blue), var(--ltp-green));
+      font-weight: 900;
+    }
+
+    .process-card h3 {
+      font-weight: 900;
+      letter-spacing: -.035em;
+    }
+
+    .process-card p {
+      margin: 0;
+      color: var(--ltp-muted);
+      line-height: 1.7;
+    }
+
+    .cta-band {
+      padding: 46px;
+      border-radius: 36px;
+      color: #fff;
+      background:
+        linear-gradient(135deg, rgba(11,45,77,.96), rgba(18,63,105,.92)),
+        url("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1600&q=85") center/cover no-repeat;
+      box-shadow: var(--shadow-premium);
+    }
+
+    .cta-band h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 900;
+      letter-spacing: -.06em;
+    }
+
+    .cta-band p {
+      color: rgba(255,255,255,.72);
+      line-height: 1.7;
+    }
+
+    .footer {
+      padding: 70px 0 30px;
+      color: rgba(255,255,255,.72);
+      background: #071525;
+    }
+
+    .footer h3,
+    .footer h4 {
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .footer a {
+      display: block;
+      color: rgba(255,255,255,.68);
+      margin-bottom: 10px;
+      transition: var(--transition);
+    }
+
+    .footer a:hover {
+      color: #fff;
+      transform: translateX(4px);
+    }
+
+    .floating-contact {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 40;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .floating-contact a {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      color: #fff;
+      background: var(--ltp-green);
+      box-shadow: 0 20px 45px rgba(47, 125, 92, .32);
+      transition: var(--transition);
+    }
+
+    .floating-contact a:nth-child(2) { background: var(--ltp-blue); }
+    .floating-contact a:nth-child(3) { background: var(--ltp-gold); }
+
+    .floating-contact a:hover {
+      transform: translateY(-4px);
+      color: #fff;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .75s ease, transform .75s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1199.98px) {
+      .navbar-collapse { padding: 20px 0; }
+    }
+
+    @media (max-width: 991.98px) {
+      .page-hero { min-height: auto; }
+      .side-panel { position: static; }
+      .quote-card { padding: 30px; }
+    }
+
+    @media (max-width: 575.98px) {
+      section { padding: 75px 0; }
+      .page-hero { padding-top: 125px; }
+      .quote-card, .cta-band { padding: 26px; }
+      .floating-contact {
+        right: 14px;
+        bottom: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-xl fixed-top" id="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <span class="brand-mark">LTP</span>
+        <span>
+          LTP Construction
+          <span class="brand-sub">Guinée · SARLU</span>
+        </span>
+      </a>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-label="Menu">
+        <i class="bi bi-list fs-1"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto align-items-xl-center gap-xl-2">
+          <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="a-propos.html">À propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="projets.html">Projets</a></li>
+          <li class="nav-item"><a class="nav-link" href="mines-infrastructures.html">Mines & Infrastructures</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Actualités</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="btn-outline-premium ms-xl-2" href="../index.html">Changer de pays</a></li>
+          <li class="nav-item"><a class="btn-premium ms-xl-2 active" href="devis.html">Demander un devis</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="container">
+      <div class="breadcrumb-premium reveal">
+        <a href="index.html">Accueil</a>
+        <i class="bi bi-chevron-right"></i>
+        <span>Demande de devis</span>
+      </div>
+
+      <h1 class="reveal">Présentez-nous votre projet.</h1>
+      <p class="reveal">
+        Construction, génie civil, routes, mines, infrastructures, immobilier ou logistique chantier :
+        envoyez les informations principales pour recevoir un retour professionnel de LTP Construction Guinée.
+      </p>
+
+      <div class="d-flex flex-wrap gap-3 mt-4 reveal">
+        <a class="btn-premium" href="#formulaire-devis"><i class="bi bi-pencil-square"></i>Remplir le formulaire</a>
+        <a class="btn-outline-premium" href="https://wa.me/224000000000"><i class="bi bi-whatsapp"></i>WhatsApp Business</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="formulaire-devis">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-8 reveal">
+          <div class="quote-card">
+            <span class="section-kicker">Formulaire rapide</span>
+            <h2 class="display-6 mt-3 mb-4" style="font-weight:900;letter-spacing:-.055em;">Demande de devis projet</h2>
+
+            <form>
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <label class="form-label" for="nom">Nom complet</label>
+                  <input class="form-control" type="text" id="nom" name="nom" placeholder="Votre nom">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label" for="entreprise">Entreprise / Organisation</label>
+                  <input class="form-control" type="text" id="entreprise" name="entreprise" placeholder="Nom de votre structure">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label" for="telephone">Téléphone</label>
+                  <input class="form-control" type="tel" id="telephone" name="telephone" placeholder="+224 ...">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label" for="email">Email professionnel</label>
+                  <input class="form-control" type="email" id="email" name="email" placeholder="exemple@domaine.com">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label" for="type-projet">Type de projet</label>
+                  <select class="form-select" id="type-projet" name="type-projet">
+                    <option selected>Choisir un type de projet</option>
+                    <option>Construction bâtiment</option>
+                    <option>Routes & voiries</option>
+                    <option>Génie civil</option>
+                    <option>Mines & infrastructures</option>
+                    <option>Terrassement</option>
+                    <option>Forage</option>
+                    <option>Maintenance industrielle</option>
+                    <option>Logistique chantier</option>
+                    <option>Immobilier</option>
+                    <option>Autre besoin</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label" for="zone">Zone du projet</label>
+                  <input class="form-control" type="text" id="zone" name="zone" placeholder="Ville, région ou site">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label" for="budget">Budget estimatif</label>
+                  <select class="form-select" id="budget" name="budget">
+                    <option selected>Choisir une fourchette</option>
+                    <option>À définir</option>
+                    <option>Moins de 100 000 000 GNF</option>
+                    <option>100 000 000 - 500 000 000 GNF</option>
+                    <option>500 000 000 - 1 milliard GNF</option>
+                    <option>Plus de 1 milliard GNF</option>
+                    <option>Projet institutionnel / gros contrat</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label" for="delai">Délai souhaité</label>
+                  <select class="form-select" id="delai" name="delai">
+                    <option selected>Choisir un délai</option>
+                    <option>Urgent</option>
+                    <option>Moins de 1 mois</option>
+                    <option>1 à 3 mois</option>
+                    <option>3 à 6 mois</option>
+                    <option>Plus de 6 mois</option>
+                    <option>À définir ensemble</option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label" for="message">Description du projet</label>
+                  <textarea class="form-control" id="message" name="message" placeholder="Décrivez le besoin : type de travaux, surface, localisation, contraintes, documents disponibles, urgence..."></textarea>
+                </div>
+
+                <div class="col-12">
+                  <div class="p-3 rounded-4 bg-light border">
+                    <small class="text-secondary">
+                      Cette maquette est statique : le formulaire n’envoie pas encore les données.
+                      L’envoi pourra être connecté plus tard à un email, WhatsApp, backend ou outil CRM.
+                    </small>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <button class="btn-premium" type="button">
+                    <i class="bi bi-send"></i>
+                    Envoyer la demande
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-lg-4 reveal">
+          <aside class="side-panel">
+            <div class="contact-card">
+              <h3>Contact direct</h3>
+              <p>Pour une demande urgente ou un projet stratégique, utilisez les contacts rapides.</p>
+
+              <a class="contact-link" href="https://wa.me/224000000000">
+                <i class="bi bi-whatsapp"></i>
+                WhatsApp Business
+              </a>
+
+              <a class="contact-link" href="tel:+224000000000">
+                <i class="bi bi-telephone"></i>
+                Appeler maintenant
+              </a>
+
+              <a class="contact-link" href="mailto:devis@ltpconstruction.com">
+                <i class="bi bi-envelope"></i>
+                devis@ltpconstruction.com
+              </a>
+            </div>
+
+            <div class="trust-card">
+              <h3>Pourquoi ce formulaire ?</h3>
+              <ul class="trust-list">
+                <li><i class="bi bi-check-circle"></i>Comprendre rapidement le besoin réel.</li>
+                <li><i class="bi bi-check-circle"></i>Identifier le type de projet et les contraintes.</li>
+                <li><i class="bi bi-check-circle"></i>Préparer une réponse plus professionnelle.</li>
+                <li><i class="bi bi-check-circle"></i>Orienter vers devis, visite site ou rendez-vous.</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-light">
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="section-kicker">Types de demandes</span>
+        <h2>Des demandes de devis adaptées aux grands besoins terrain.</h2>
+        <p>
+          Le formulaire permet d’orienter les prospects selon le type de chantier :
+          bâtiment, route, mine, infrastructure, maintenance ou logistique.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="need-card">
+            <i class="bi bi-building"></i>
+            <h3>Bâtiments</h3>
+            <p>Construction, rénovation, extension, bâtiments professionnels et programmes immobiliers.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="need-card">
+            <i class="bi bi-signpost-split"></i>
+            <h3>Routes & TP</h3>
+            <p>Voiries, accès chantier, plateformes, pistes techniques et infrastructures routières.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="need-card">
+            <i class="bi bi-minecart-loaded"></i>
+            <h3>Mines</h3>
+            <p>Bases vie, routes minières, génie civil industriel et logistique chantier lourd.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="need-card">
+            <i class="bi bi-tools"></i>
+            <h3>Support technique</h3>
+            <p>Maintenance industrielle, fourniture technique, transport, coordination et support terrain.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="section-kicker">Après l’envoi</span>
+        <h2>Une suite claire pour rassurer le client.</h2>
+        <p>
+          Même en maquette, cette partie donne une impression de sérieux et montre que LTP Construction
+          a une logique professionnelle de traitement des demandes.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="process-card">
+            <div class="process-number">01</div>
+            <h3>Réception</h3>
+            <p>L’équipe reçoit les informations essentielles du projet et vérifie la nature de la demande.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="process-card">
+            <div class="process-number">02</div>
+            <h3>Analyse</h3>
+            <p>Les besoins, contraintes, délais, budget et zones d’intervention sont analysés.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="process-card">
+            <div class="process-number">03</div>
+            <h3>Échange</h3>
+            <p>Un échange peut être proposé par téléphone, WhatsApp, email ou rendez-vous technique.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="process-card">
+            <div class="process-number">04</div>
+            <h3>Proposition</h3>
+            <p>Une réponse ou une proposition commerciale est préparée selon les informations disponibles.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-light">
+    <div class="container">
+      <div class="cta-band reveal">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7">
+            <h2>Vous préférez un échange direct ?</h2>
+            <p class="mb-lg-0">
+              Contactez LTP Construction Guinée par WhatsApp, téléphone ou email pour présenter rapidement votre besoin.
+            </p>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="d-flex flex-wrap gap-3 justify-content-lg-end">
+              <a class="btn-premium" href="https://wa.me/224000000000"><i class="bi bi-whatsapp"></i>WhatsApp</a>
+              <a class="btn-outline-premium" href="tel:+224000000000"><i class="bi bi-telephone"></i>Appeler</a>
+              <a class="btn-outline-premium" href="mailto:devis@ltpconstruction.com"><i class="bi bi-envelope"></i>Email devis</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <h3>LTP Construction Guinée</h3>
+          <p>
+            Construction, BTP, génie civil, mines, infrastructures, immobilier,
+            maintenance industrielle et logistique chantier.
+          </p>
+        </div>
+
+        <div class="col-md-4 col-lg-2">
+          <h4 class="h6">Navigation</h4>
+          <a href="index.html">Accueil</a>
+          <a href="a-propos.html">À propos</a>
+          <a href="services.html">Services</a>
+          <a href="projets.html">Projets</a>
+        </div>
+
+        <div class="col-md-4 col-lg-3">
+          <h4 class="h6">Business</h4>
+          <a href="mines-infrastructures.html">Mines & Infrastructures</a>
+          <a href="devis.html">Demande de devis</a>
+          <a href="blog.html">Actualités</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="col-md-4 col-lg-3">
+          <h4 class="h6">Emails professionnels</h4>
+          <a href="mailto:contact@ltpconstruction.com">contact@ltpconstruction.com</a>
+          <a href="mailto:devis@ltpconstruction.com">devis@ltpconstruction.com</a>
+          <a href="mailto:rh@ltpconstruction.com">rh@ltpconstruction.com</a>
+        </div>
+      </div>
+
+      <hr class="border-secondary my-4">
+
+      <div class="d-flex flex-column flex-md-row justify-content-between gap-2">
+        <small>© 2026 LTP Construction SARLU. Tous droits réservés.</small>
+        <small>Guinée · Cameroun · Afrique de l’Ouest · Afrique Centrale</small>
+      </div>
+    </div>
+  </footer>
+
+  <aside class="floating-contact" aria-label="Contacts rapides">
+    <a href="https://wa.me/224000000000" aria-label="WhatsApp Business"><i class="bi bi-whatsapp"></i></a>
+    <a href="tel:+224000000000" aria-label="Appeler LTP Construction"><i class="bi bi-telephone"></i></a>
+    <a href="devis.html" aria-label="Demander un devis"><i class="bi bi-file-earmark-text"></i></a>
+  </aside>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const navbar = document.getElementById("navbar");
+    const reveals = document.querySelectorAll(".reveal");
+
+    function handleScroll() {
+      navbar.classList.toggle("scrolled", window.scrollY > 20);
+
+      reveals.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+
+        if (rect.top < window.innerHeight - 80) {
+          el.classList.add("visible");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("load", handleScroll);
+  </script>
+</body>
+</html>
