@@ -108,6 +108,8 @@
 
     .nav-link:hover,
     .nav-link.active { color: var(--ltp-blue); }
+    .nav-link { white-space: nowrap; padding-inline: .65rem; }
+    .btn-premium, .btn-outline-premium { white-space: nowrap; }
 
     .btn-premium {
       display: inline-flex;
@@ -520,7 +522,7 @@
       transform: translateY(0);
     }
 
-    @media (max-width: 1199.98px) {
+    @media (max-width: 1399.98px) {
       .navbar-collapse { padding: 20px 0; }
     }
 
@@ -545,7 +547,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-xl fixed-top" id="navbar">
+  <nav class="navbar navbar-expand-xxl fixed-top" id="navbar">
     <div class="container">
       <a class="navbar-brand" href="index.html">
         <span class="brand-mark">LTP</span>
@@ -560,7 +562,7 @@
       </button>
 
       <div class="collapse navbar-collapse" id="mainNavbar">
-        <ul class="navbar-nav ms-auto align-items-xl-center gap-xl-2">
+        <ul class="navbar-nav ms-auto align-items-xxl-center gap-xxl-2">
           <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
           <li class="nav-item"><a class="nav-link" href="a-propos.html">À propos</a></li>
           <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
@@ -568,8 +570,8 @@
           <li class="nav-item"><a class="nav-link" href="mines-infrastructures.html">Mines & Infrastructures</a></li>
           <li class="nav-item"><a class="nav-link" href="blog.html">Actualités</a></li>
           <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="btn-outline-premium ms-xl-2" href="../index.html">Changer de pays</a></li>
-          <li class="nav-item"><a class="btn-premium ms-xl-2" href="devis.html">Demander un devis</a></li>
+          <li class="nav-item"><a class="btn-outline-premium ms-xxl-2" href="../index.html">Changer de pays</a></li>
+          <li class="nav-item"><a class="btn-premium ms-xxl-2" href="devis.html">Demander un devis</a></li>
         </ul>
       </div>
     </div>

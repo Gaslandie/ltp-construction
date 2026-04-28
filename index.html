@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LTP Construction SARLU | BTP, Mines & Infrastructures en Afrique</title>
+  <meta name="description" content="LTP Construction SARLU accompagne les grands projets de construction, BTP, génie civil, mines et infrastructures en Guinée et au Cameroun.">
+  <meta name="keywords" content="construction Guinée, BTP Guinée, entreprise BTP Conakry, construction Cameroun, travaux publics Afrique, Simandou construction, mines Guinée, génie civil Afrique">
+  <meta name="author" content="LTP Construction SARLU">
+  <meta property="og:title" content="LTP Construction SARLU | Construire l’Afrique de demain">
+  <meta property="og:description" content="Un partenaire de confiance pour les grands projets en Afrique.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Google Analytics à activer plus tard -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
+  <style>
+    :root {
+      --ltp-blue: #0b2d4d;
+      --ltp-blue-2: #123f69;
+      --ltp-gold: #c9a55b;
+      --ltp-green: #2f7d5c;
+      --ltp-orange: #d97836;
+      --ltp-dark: #111827;
+      --ltp-muted: #64748b;
+      --ltp-soft: #f5f7fa;
+      --ltp-border: rgba(255,255,255,.16);
+      --shadow-premium: 0 30px 80px rgba(2, 12, 27, .28);
+      --transition: all .35s ease;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #fff;
+      background: #071525;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; }
+
+    .portal-shell {
+      position: relative;
+      min-height: 100vh;
+      isolation: isolate;
+      background:
+        linear-gradient(120deg, rgba(5, 17, 31, .94), rgba(11, 45, 77, .78)),
+        url("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=85") center/cover no-repeat;
+    }
+
+    .portal-shell::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(circle at 18% 20%, rgba(201, 165, 91, .22), transparent 28%),
+        radial-gradient(circle at 82% 75%, rgba(47, 125, 92, .18), transparent 30%),
+        linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.48));
+    }
+
+    .portal-shell::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      opacity: .18;
+      background-image:
+        linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+      background-size: 52px 52px;
+      mask-image: linear-gradient(to bottom, #000, transparent 75%);
+    }
+
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 20;
+      padding: 22px 0;
+      transition: var(--transition);
+    }
+
+    .topbar.scrolled {
+      padding: 13px 0;
+      background: rgba(7, 21, 37, .82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,.09);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      color: #fff;
+      font-weight: 800;
+      letter-spacing: -.03em;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      color: var(--ltp-blue);
+      background: linear-gradient(135deg, #fff, #d7e6f5);
+      box-shadow: 0 16px 36px rgba(0,0,0,.26);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      width: 70%;
+      height: 3px;
+      bottom: 12px;
+      left: 15%;
+      border-radius: 50px;
+      background: linear-gradient(90deg, var(--ltp-gold), var(--ltp-green));
+    }
+
+    .brand small {
+      display: block;
+      margin-top: 2px;
+      color: rgba(255,255,255,.68);
+      font-size: .76rem;
+      font-weight: 600;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .top-actions {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-glass {
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.08);
+      backdrop-filter: blur(12px);
+      border-radius: 999px;
+      padding: 11px 18px;
+      font-weight: 700;
+      transition: var(--transition);
+    }
+
+    .btn-glass:hover {
+      color: #fff;
+      transform: translateY(-2px);
+      border-color: rgba(201,165,91,.55);
+      background: rgba(255,255,255,.13);
+    }
+
+    .hero-content {
+      min-height: 100vh;
+      display: grid;
+      align-items: center;
+      padding: 140px 0 70px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      padding: 9px 14px;
+      border-radius: 999px;
+      color: rgba(255,255,255,.9);
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.13);
+      backdrop-filter: blur(12px);
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--ltp-gold);
+      box-shadow: 0 0 0 6px rgba(201,165,91,.16);
+    }
+
+    .hero-title {
+      max-width: 980px;
+      margin: 26px 0 20px;
+      font-size: clamp(3rem, 8vw, 7.4rem);
+      line-height: .91;
+      font-weight: 800;
+      letter-spacing: -.075em;
+    }
+
+    .hero-title strong {
+      color: transparent;
+      background: linear-gradient(135deg, #fff, #d7e6f5 45%, #c9a55b 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      max-width: 760px;
+      color: rgba(255,255,255,.76);
+      font-size: clamp(1.05rem, 2vw, 1.38rem);
+      line-height: 1.75;
+    }
+
+    .country-card {
+      position: relative;
+      min-height: 430px;
+      overflow: hidden;
+      border-radius: 34px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.15);
+      box-shadow: var(--shadow-premium);
+      transform: translateY(0);
+      transition: var(--transition);
+    }
+
+    .country-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(201,165,91,.55);
+    }
+
+    .country-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.04);
+      transition: transform .7s ease;
+      filter: saturate(.92) contrast(1.05);
+    }
+
+    .country-card:hover img { transform: scale(1.1); }
+
+    .country-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(4,14,25,.08), rgba(4,14,25,.88)),
+        linear-gradient(110deg, rgba(11,45,77,.64), transparent 60%);
+    }
+
+    .country-content {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 34px;
+    }
+
+    .country-badge {
+      width: fit-content;
+      margin-bottom: 18px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(255,255,255,.13);
+      border: 1px solid rgba(255,255,255,.16);
+      backdrop-filter: blur(10px);
+      font-size: .85rem;
+      font-weight: 700;
+    }
+
+    .country-content h2 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -.05em;
+    }
+
+    .country-content p {
+      max-width: 430px;
+      margin-bottom: 24px;
+      color: rgba(255,255,255,.76);
+      line-height: 1.7;
+    }
+
+    .btn-enter {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: fit-content;
+      color: var(--ltp-blue);
+      background: #fff;
+      border-radius: 999px;
+      padding: 13px 20px;
+      font-weight: 800;
+      box-shadow: 0 18px 40px rgba(0,0,0,.2);
+      transition: var(--transition);
+    }
+
+    .btn-enter:hover {
+      color: var(--ltp-blue);
+      background: linear-gradient(135deg, #fff, #f3dfad);
+      transform: translateX(4px);
+    }
+
+    .credibility-panel {
+      margin-top: 42px;
+      border: 1px solid rgba(255,255,255,.13);
+      background: rgba(255,255,255,.08);
+      backdrop-filter: blur(16px);
+      border-radius: 30px;
+      overflow: hidden;
+    }
+
+    .credibility-item {
+      height: 100%;
+      padding: 26px;
+      border-right: 1px solid rgba(255,255,255,.1);
+    }
+
+    .credibility-item:last-child { border-right: 0; }
+
+    .credibility-item i {
+      display: inline-grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      margin-bottom: 14px;
+      border-radius: 14px;
+      color: #fff;
+      background: rgba(201,165,91,.18);
+      border: 1px solid rgba(201,165,91,.28);
+      font-size: 1.2rem;
+    }
+
+    .credibility-item h3 {
+      margin-bottom: 8px;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .credibility-item p {
+      margin: 0;
+      color: rgba(255,255,255,.66);
+      font-size: .92rem;
+      line-height: 1.6;
+    }
+
+    .floating-contact {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 30;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .floating-contact a {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      color: #fff;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.18);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 20px 45px rgba(0,0,0,.22);
+      transition: var(--transition);
+    }
+
+    .floating-contact a:hover {
+      transform: translateY(-4px);
+      background: var(--ltp-green);
+      color: #fff;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .75s ease, transform .75s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 991.98px) {
+      .top-actions { display: none; }
+      .hero-title { letter-spacing: -.055em; }
+      .country-card { min-height: 370px; }
+      .credibility-item { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+    }
+
+    @media (max-width: 575.98px) {
+      .brand-mark { width: 42px; height: 42px; }
+      .hero-content { padding-top: 120px; }
+      .country-content { padding: 26px; }
+      .floating-contact { right: 14px; bottom: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="portal-shell">
+    <header class="topbar" id="topbar">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-8 col-lg-5">
+            <a class="brand" href="index.html" aria-label="Accueil LTP Construction">
+              <span class="brand-mark">LTP</span>
+              <span>LTP Construction <small>SARLU · Afrique</small></span>
+            </a>
+          </div>
+          <div class="col-lg-7 top-actions">
+            <a class="btn-glass" href="guinee/devis.html"><i class="bi bi-file-earmark-text me-2"></i>Demande de devis</a>
+            <a class="btn-glass" href="guinee/contact.html"><i class="bi bi-envelope me-2"></i>Contact corporate</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero-content">
+      <div class="container">
+        <div class="row align-items-end g-5">
+          <div class="col-xl-10">
+            <div class="eyebrow reveal"><span></span> BTP · Mines · Infrastructures · Logistique chantier</div>
+            <h1 class="hero-title reveal"><strong>Construire l’Afrique de demain</strong></h1>
+            <p class="hero-subtitle reveal">
+              BTP, infrastructures, mines et solutions techniques en Guinée et au Cameroun.
+              Un partenaire structuré pour les projets exigeants, les investisseurs et les grands donneurs d’ordre.
+            </p>
+          </div>
+        </div>
+
+        <div class="row g-4 mt-4">
+          <div class="col-lg-6 reveal">
+            <article class="country-card">
+              <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=85" alt="Chantier moderne en Guinée">
+              <div class="country-content">
+                <span class="country-badge">🇬🇳 Guinée · Conakry · Mines · Simandou</span>
+                <h2>LTP Guinée</h2>
+                <p>Bâtir la Guinée de demain avec des solutions solides en construction, génie civil, routes, mines et infrastructures.</p>
+                <a class="btn-enter" href="guinee/index.html">Entrer sur LTP Guinée <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-6 reveal">
+            <article class="country-card">
+              <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=85" alt="Projet industriel au Cameroun">
+              <div class="country-content">
+                <span class="country-badge">🇨🇲 Cameroun · BTP · Infrastructures · Maintenance</span>
+                <h2>LTP Cameroun</h2>
+                <p>Construire durablement pour demain avec une approche professionnelle, fiable et adaptée aux projets complexes.</p>
+                <a class="btn-enter" href="cameroun/index.html">Entrer sur LTP Cameroun <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="credibility-panel reveal">
+          <div class="row g-0">
+            <div class="col-md-6 col-xl-3">
+              <div class="credibility-item">
+                <i class="bi bi-globe2"></i>
+                <h3>Multi-pays</h3>
+                <p>Présence stratégique en Guinée et au Cameroun, avec ambition Afrique de l’Ouest et Afrique Centrale.</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+              <div class="credibility-item">
+                <i class="bi bi-buildings"></i>
+                <h3>Expertise multisectorielle</h3>
+                <p>Construction, travaux publics, mines, immobilier, maintenance industrielle et logistique chantier.</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+              <div class="credibility-item">
+                <i class="bi bi-diagram-3"></i>
+                <h3>Solutions clé en main</h3>
+                <p>Une approche intégrée pour accompagner les projets de l’étude à l’exécution opérationnelle.</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+              <div class="credibility-item">
+                <i class="bi bi-shield-check"></i>
+                <h3>Standards professionnels</h3>
+                <p>Image corporate, conformité, sérieux opérationnel et communication adaptée aux grands comptes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="floating-contact" aria-label="Contacts rapides">
+      <a href="https://wa.me/224000000000" aria-label="WhatsApp Business"><i class="bi bi-whatsapp"></i></a>
+      <a href="tel:+224000000000" aria-label="Appeler LTP Construction"><i class="bi bi-telephone"></i></a>
+      <a href="guinee/devis.html" aria-label="Demander un devis"><i class="bi bi-file-earmark-text"></i></a>
+    </aside>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const topbar = document.getElementById("topbar");
+    const reveals = document.querySelectorAll(".reveal");
+
+    function handleScroll() {
+      topbar.classList.toggle("scrolled", window.scrollY > 20);
+      reveals.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 70) el.classList.add("visible");
+      });
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("load", handleScroll);
+  </script>
+</body>
+</html>
