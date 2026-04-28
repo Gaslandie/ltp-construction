@@ -1,0 +1,1360 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LTP Construction Guinée | BTP, Mines & Infrastructures</title>
+  <meta name="description" content="LTP Construction Guinée accompagne les projets de construction, BTP, génie civil, mines, routes, infrastructures et logistique chantier.">
+  <meta name="keywords" content="construction Guinée, BTP Guinée, entreprise BTP Conakry, Simandou construction, mines Guinée, génie civil Afrique">
+  <meta property="og:title" content="LTP Construction Guinée | Bâtir la Guinée de demain">
+  <meta property="og:description" content="Construction, génie civil, mines, infrastructures et solutions techniques en Guinée.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=85">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --ltp-blue: #0b2d4d;
+      --ltp-blue-2: #123f69;
+      --ltp-gold: #c9a55b;
+      --ltp-green: #2f7d5c;
+      --ltp-orange: #d97836;
+      --ltp-dark: #111827;
+      --ltp-muted: #64748b;
+      --ltp-light: #f5f7fa;
+      --ltp-border: #e5eaf0;
+      --shadow-soft: 0 20px 60px rgba(15, 23, 42, .08);
+      --shadow-premium: 0 30px 90px rgba(15, 23, 42, .14);
+      --transition: all .35s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--ltp-dark);
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .navbar {
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(229,234,240,.82);
+      transition: var(--transition);
+      z-index: 1030;
+    }
+
+    .navbar.scrolled {
+      box-shadow: 0 18px 45px rgba(15, 23, 42, .08);
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: -.04em;
+      color: var(--ltp-blue);
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--ltp-blue), var(--ltp-blue-2));
+      box-shadow: 0 14px 30px rgba(11, 45, 77, .25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      width: 70%;
+      height: 3px;
+      bottom: 10px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--ltp-gold), var(--ltp-green));
+    }
+
+    .brand-sub {
+      display: block;
+      margin-top: 1px;
+      color: var(--ltp-muted);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .nav-link {
+      color: #263445;
+      font-weight: 700;
+      font-size: .94rem;
+      transition: var(--transition);
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--ltp-blue);
+    }
+
+    .btn-premium {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 0;
+      border-radius: 999px;
+      padding: 13px 21px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--ltp-blue), var(--ltp-blue-2));
+      font-weight: 800;
+      box-shadow: 0 18px 38px rgba(11, 45, 77, .22);
+      transition: var(--transition);
+    }
+
+    .btn-premium:hover {
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 22px 46px rgba(11, 45, 77, .3);
+    }
+
+    .btn-outline-premium {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 1px solid rgba(11, 45, 77, .18);
+      border-radius: 999px;
+      padding: 12px 20px;
+      color: var(--ltp-blue);
+      background: rgba(255,255,255,.88);
+      font-weight: 800;
+      transition: var(--transition);
+    }
+
+    .btn-outline-premium:hover {
+      color: #fff;
+      background: var(--ltp-blue);
+      transform: translateY(-3px);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      align-items: center;
+      padding: 145px 0 80px;
+      color: #fff;
+      overflow: hidden;
+      background:
+        linear-gradient(105deg, rgba(5, 17, 31, .96) 0%, rgba(11, 45, 77, .82) 45%, rgba(11, 45, 77, .38) 100%),
+        url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1920&q=85") center/cover no-repeat;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 14% 22%, rgba(201,165,91,.22), transparent 24%),
+        radial-gradient(circle at 86% 82%, rgba(47,125,92,.18), transparent 28%);
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      padding: 9px 14px;
+      border-radius: 999px;
+      color: rgba(255,255,255,.92);
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.16);
+      backdrop-filter: blur(12px);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--ltp-gold);
+      box-shadow: 0 0 0 6px rgba(201,165,91,.15);
+    }
+
+    .hero h1 {
+      max-width: 980px;
+      margin: 25px 0 22px;
+      font-size: clamp(3rem, 7vw, 6.8rem);
+      line-height: .92;
+      font-weight: 900;
+      letter-spacing: -.075em;
+    }
+
+    .hero p {
+      max-width: 740px;
+      color: rgba(255,255,255,.78);
+      font-size: clamp(1.04rem, 1.8vw, 1.34rem);
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .hero-stats {
+      margin-top: 58px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.09);
+      backdrop-filter: blur(18px);
+      border-radius: 28px;
+      overflow: hidden;
+    }
+
+    .hero-stat {
+      padding: 24px;
+      border-right: 1px solid rgba(255,255,255,.1);
+    }
+
+    .hero-stat:last-child {
+      border-right: 0;
+    }
+
+    .hero-stat strong {
+      display: block;
+      font-size: 2rem;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -.04em;
+    }
+
+    .hero-stat span {
+      color: rgba(255,255,255,.68);
+      font-weight: 600;
+    }
+
+    section {
+      padding: 105px 0;
+    }
+
+    .section-light {
+      background: var(--ltp-light);
+    }
+
+    .section-title {
+      max-width: 760px;
+      margin-bottom: 52px;
+    }
+
+    .section-kicker {
+      color: var(--ltp-gold);
+      font-weight: 900;
+      font-size: .82rem;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+
+    .section-title h2 {
+      margin: 12px 0 15px;
+      color: var(--ltp-dark);
+      font-size: clamp(2.2rem, 4.2vw, 4rem);
+      line-height: 1.02;
+      font-weight: 900;
+      letter-spacing: -.06em;
+    }
+
+    .section-title p {
+      color: var(--ltp-muted);
+      font-size: 1.08rem;
+      line-height: 1.75;
+    }
+
+    .corporate-card {
+      height: 100%;
+      padding: 34px;
+      border: 1px solid var(--ltp-border);
+      border-radius: 30px;
+      background: #fff;
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition);
+    }
+
+    .corporate-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-premium);
+    }
+
+    .icon-box {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 23px;
+      border-radius: 18px;
+      color: var(--ltp-blue);
+      background: linear-gradient(135deg, #eef5fb, #fff8e8);
+      font-size: 1.55rem;
+    }
+
+    .corporate-card h3 {
+      margin-bottom: 12px;
+      font-size: 1.24rem;
+      font-weight: 900;
+      letter-spacing: -.035em;
+    }
+
+    .corporate-card p {
+      margin: 0;
+      color: var(--ltp-muted);
+      line-height: 1.7;
+    }
+
+    .about-image {
+      position: relative;
+      overflow: hidden;
+      min-height: 570px;
+      border-radius: 36px;
+      box-shadow: var(--shadow-premium);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 570px;
+      object-fit: cover;
+    }
+
+    .about-badge {
+      position: absolute;
+      left: 28px;
+      bottom: 28px;
+      max-width: 340px;
+      padding: 24px;
+      border-radius: 24px;
+      color: #fff;
+      background: rgba(11, 45, 77, .86);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+
+    .about-badge strong {
+      display: block;
+      font-size: 2.4rem;
+      font-weight: 900;
+      letter-spacing: -.05em;
+    }
+
+    .service-card {
+      height: 100%;
+      padding: 30px;
+      border-radius: 28px;
+      background: #fff;
+      border: 1px solid var(--ltp-border);
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(201,165,91,.4);
+      box-shadow: var(--shadow-premium);
+    }
+
+    .service-card i {
+      color: var(--ltp-gold);
+      font-size: 2rem;
+    }
+
+    .service-card h3 {
+      margin: 18px 0 11px;
+      font-size: 1.13rem;
+      font-weight: 900;
+      letter-spacing: -.03em;
+    }
+
+    .service-card p {
+      margin: 0;
+      color: var(--ltp-muted);
+      line-height: 1.65;
+      font-size: .96rem;
+    }
+
+    .project-card {
+      position: relative;
+      min-height: 430px;
+      overflow: hidden;
+      border-radius: 32px;
+      box-shadow: var(--shadow-premium);
+    }
+
+    .project-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .7s ease;
+    }
+
+    .project-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .project-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 10%, rgba(4, 14, 25, .88) 100%);
+    }
+
+    .project-content {
+      position: absolute;
+      inset: auto 0 0 0;
+      z-index: 2;
+      padding: 30px;
+      color: #fff;
+    }
+
+    .project-content span {
+      display: inline-flex;
+      margin-bottom: 12px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.14);
+      backdrop-filter: blur(8px);
+      font-size: .78rem;
+      font-weight: 800;
+    }
+
+    .project-content h3 {
+      margin-bottom: 10px;
+      font-weight: 900;
+      letter-spacing: -.04em;
+    }
+
+    .project-content p {
+      margin: 0;
+      color: rgba(255,255,255,.72);
+      line-height: 1.65;
+    }
+
+    .mines-section {
+      position: relative;
+      color: #fff;
+      overflow: hidden;
+      background:
+        linear-gradient(110deg, rgba(5, 17, 31, .95), rgba(11, 45, 77, .85)),
+        url("https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1920&q=85") center/cover no-repeat;
+    }
+
+    .mines-section .section-title h2,
+    .mines-section .section-title p {
+      color: #fff;
+    }
+
+    .mines-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .mine-item {
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.14);
+      backdrop-filter: blur(14px);
+    }
+
+    .mine-item i {
+      color: var(--ltp-gold);
+      font-size: 1.5rem;
+    }
+
+    .mine-item h3 {
+      margin: 14px 0 8px;
+      font-size: 1rem;
+      font-weight: 900;
+    }
+
+    .mine-item p {
+      margin: 0;
+      color: rgba(255,255,255,.68);
+      line-height: 1.6;
+      font-size: .93rem;
+    }
+
+    .why-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .why-item {
+      display: flex;
+      gap: 16px;
+      padding: 22px;
+      border-radius: 24px;
+      background: #fff;
+      border: 1px solid var(--ltp-border);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .why-item i {
+      width: 44px;
+      height: 44px;
+      flex: 0 0 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      color: #fff;
+      background: var(--ltp-blue);
+    }
+
+    .why-item h3 {
+      margin-bottom: 6px;
+      font-size: 1rem;
+      font-weight: 900;
+    }
+
+    .why-item p {
+      margin: 0;
+      color: var(--ltp-muted);
+      line-height: 1.6;
+    }
+
+    .counter-card {
+      padding: 34px;
+      border-radius: 28px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--ltp-blue), var(--ltp-blue-2));
+      box-shadow: var(--shadow-premium);
+    }
+
+    .counter-card strong {
+      display: block;
+      font-size: 3rem;
+      font-weight: 900;
+      letter-spacing: -.06em;
+    }
+
+    .counter-card span {
+      color: rgba(255,255,255,.72);
+      font-weight: 700;
+    }
+
+    .testimonial-card {
+      height: 100%;
+      padding: 34px;
+      border-radius: 30px;
+      background: #fff;
+      border: 1px solid var(--ltp-border);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .testimonial-card p {
+      color: var(--ltp-muted);
+      line-height: 1.8;
+    }
+
+    .stars {
+      color: var(--ltp-gold);
+      margin-bottom: 18px;
+    }
+
+    .contact-band {
+      padding: 46px;
+      border-radius: 36px;
+      color: #fff;
+      background:
+        linear-gradient(135deg, rgba(11,45,77,.96), rgba(18,63,105,.92)),
+        url("https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=1600&q=85") center/cover no-repeat;
+      box-shadow: var(--shadow-premium);
+    }
+
+    .contact-band h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 900;
+      letter-spacing: -.06em;
+    }
+
+    .contact-band p {
+      color: rgba(255,255,255,.72);
+      line-height: 1.7;
+    }
+
+    .footer {
+      padding: 70px 0 30px;
+      color: rgba(255,255,255,.72);
+      background: #071525;
+    }
+
+    .footer h3,
+    .footer h4 {
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .footer a {
+      display: block;
+      color: rgba(255,255,255,.68);
+      margin-bottom: 10px;
+      transition: var(--transition);
+    }
+
+    .footer a:hover {
+      color: #fff;
+      transform: translateX(4px);
+    }
+
+    .floating-contact {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 40;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .floating-contact a {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      color: #fff;
+      background: var(--ltp-green);
+      box-shadow: 0 20px 45px rgba(47, 125, 92, .32);
+      transition: var(--transition);
+    }
+
+    .floating-contact a:nth-child(2) {
+      background: var(--ltp-blue);
+    }
+
+    .floating-contact a:nth-child(3) {
+      background: var(--ltp-gold);
+    }
+
+    .floating-contact a:hover {
+      transform: translateY(-4px);
+      color: #fff;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .75s ease, transform .75s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        padding: 20px 0;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-stat {
+        border-right: 0;
+        border-bottom: 1px solid rgba(255,255,255,.1);
+      }
+
+      .mines-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image,
+      .about-image img {
+        min-height: 420px;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      section {
+        padding: 75px 0;
+      }
+
+      .hero {
+        padding-top: 125px;
+      }
+
+      .hero-actions .btn-premium,
+      .hero-actions .btn-outline-premium {
+        width: 100%;
+      }
+
+      .contact-band {
+        padding: 30px;
+      }
+
+      .floating-contact {
+        right: 14px;
+        bottom: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-xl fixed-top" id="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <span class="brand-mark">LTP</span>
+        <span>
+          LTP Construction
+          <span class="brand-sub">Guinée · SARLU</span>
+        </span>
+      </a>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-label="Menu">
+        <i class="bi bi-list fs-1"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto align-items-xl-center gap-xl-2">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="a-propos.html">À propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="projets.html">Projets</a></li>
+          <li class="nav-item"><a class="nav-link" href="mines-infrastructures.html">Mines & Infrastructures</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Actualités</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="en/index.html">EN</a></li>
+          <li class="nav-item"><a class="btn-outline-premium ms-xl-2" href="../index.html">Changer de pays</a></li>
+          <li class="nav-item"><a class="btn-premium ms-xl-2" href="devis.html">Demander un devis</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="eyebrow reveal"><span></span> Guinée · BTP · Mines · Infrastructures</div>
+      <h1 class="reveal">LTP Construction Guinée</h1>
+      <p class="reveal">
+        Bâtir la Guinée de demain avec une expertise solide en construction,
+        génie civil, travaux publics, mines, infrastructures, logistique chantier et solutions techniques.
+      </p>
+
+      <div class="hero-actions reveal">
+        <a class="btn-premium" href="devis.html">
+          <i class="bi bi-file-earmark-text"></i>
+          Demander un devis
+        </a>
+        <a class="btn-outline-premium" href="projets.html">
+          <i class="bi bi-buildings"></i>
+          Voir nos projets
+        </a>
+        <a class="btn-outline-premium" href="https://wa.me/224000000000">
+          <i class="bi bi-whatsapp"></i>
+          WhatsApp Business
+        </a>
+      </div>
+
+      <div class="hero-stats reveal">
+        <div class="row g-0">
+          <div class="col-md-3">
+            <div class="hero-stat">
+              <strong>10+</strong>
+              <span>Secteurs d’intervention</span>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="hero-stat">
+              <strong>2</strong>
+              <span>Pays de présence</span>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="hero-stat">
+              <strong>360°</strong>
+              <span>Solutions chantier</span>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="hero-stat">
+              <strong>24h</strong>
+              <span>Réponse commerciale</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 reveal">
+          <div class="section-title mb-4">
+            <span class="section-kicker">Présentation corporate</span>
+            <h2>Une entreprise structurée pour les grands projets.</h2>
+            <p>
+              LTP Construction Guinée se positionne comme un partenaire fiable pour les maîtres d’ouvrage,
+              entreprises privées, institutions, investisseurs et opérateurs industriels.
+            </p>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="corporate-card">
+                <div class="icon-box"><i class="bi bi-diagram-3"></i></div>
+                <h3>Vision intégrée</h3>
+                <p>De l’étude à l’exécution, avec une logique de solution complète.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="corporate-card">
+                <div class="icon-box"><i class="bi bi-shield-check"></i></div>
+                <h3>Fiabilité</h3>
+                <p>Approche professionnelle, suivi rigoureux et standards de qualité.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 reveal">
+          <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=85" alt="Équipe technique sur chantier">
+            <div class="about-badge">
+              <strong>Afrique</strong>
+              <span>Une ambition régionale avec une base forte en Guinée et au Cameroun.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <section class="section-light">
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="section-kicker">Nos services</span>
+        <h2>Des expertises pensées pour les chantiers exigeants.</h2>
+        <p>
+          LTP Construction intervient sur plusieurs métiers complémentaires pour accompagner
+          les projets publics, privés, industriels et miniers.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="service-card">
+            <i class="bi bi-building"></i>
+            <h3>Construction bâtiments</h3>
+            <p>Bâtiments professionnels, résidentiels, administratifs et ouvrages techniques.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="service-card">
+            <i class="bi bi-signpost-split"></i>
+            <h3>Routes & voiries</h3>
+            <p>Travaux routiers, accès chantier, voiries urbaines et routes industrielles.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="service-card">
+            <i class="bi bi-bricks"></i>
+            <h3>Génie civil</h3>
+            <p>Ouvrages structurants, plateformes, fondations, murs et infrastructures lourdes.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="service-card">
+            <i class="bi bi-truck"></i>
+            <h3>Terrassement</h3>
+            <p>Préparation de terrains, nivellement, décapage et mouvements de terre.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="service-card">
+            <i class="bi bi-droplet"></i>
+            <h3>Forage</h3>
+            <p>Solutions techniques pour besoins hydrauliques, industriels et chantier.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="service-card">
+            <i class="bi bi-box-seam"></i>
+            <h3>Fourniture matériaux</h3>
+            <p>Approvisionnement en matériaux, équipements et fournitures techniques.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="service-card">
+            <i class="bi bi-tools"></i>
+            <h3>Maintenance industrielle</h3>
+            <p>Support technique, maintenance, interventions et solutions opérationnelles.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="service-card">
+            <i class="bi bi-clipboard-data"></i>
+            <h3>Gestion de projets</h3>
+            <p>Coordination, planification, suivi opérationnel et contrôle d’exécution.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5 reveal">
+        <a class="btn-premium" href="services.html">
+          Voir tous les services
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="section-kicker">Réalisations majeures</span>
+        <h2>Une image conçue pour rassurer les grands donneurs d’ordre.</h2>
+        <p>
+          La maquette présente des projets représentatifs. Les références réelles pourront être intégrées
+          ensuite avec photos, montants, zones et partenaires validés par le client.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-4 reveal">
+          <article class="project-card">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=85" alt="Projet bâtiment professionnel">
+            <div class="project-content">
+              <span>Bâtiments professionnels</span>
+              <h3>Complexes administratifs</h3>
+              <p>Construction et aménagement de bâtiments adaptés aux besoins des entreprises et institutions.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-lg-4 reveal">
+          <article class="project-card">
+            <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=900&q=85" alt="Projet industriel et minier">
+            <div class="project-content">
+              <span>Mines & industrie</span>
+              <h3>Zones techniques lourdes</h3>
+              <p>Infrastructures, bases vie, plateformes et logistique chantier pour environnements exigeants.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-lg-4 reveal">
+          <article class="project-card">
+            <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=900&q=85" alt="Projet immobilier">
+            <div class="project-content">
+              <span>Immobilier</span>
+              <h3>Programmes résidentiels</h3>
+              <p>Solutions immobilières modernes avec une approche durable, fonctionnelle et professionnelle.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="text-center mt-5 reveal">
+        <a class="btn-outline-premium" href="projets.html">
+          Découvrir les projets
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mines-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5 reveal">
+          <div class="section-title mb-0">
+            <span class="section-kicker">Mines · Simandou · Infrastructures</span>
+            <h2>Un positionnement stratégique pour les projets miniers.</h2>
+            <p>
+              LTP Construction Guinée peut se présenter comme partenaire technique pour les infrastructures
+              liées aux mines, routes minières, bases vie, génie civil industriel et logistique chantier lourd.
+            </p>
+
+            <a class="btn-premium mt-3" href="mines-infrastructures.html">
+              Voir l’expertise mines
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-7 reveal">
+          <div class="mines-grid">
+            <div class="mine-item">
+              <i class="bi bi-house-gear"></i>
+              <h3>Bases vie</h3>
+              <p>Espaces fonctionnels pour équipes, encadrement et opérations terrain.</p>
+            </div>
+
+            <div class="mine-item">
+              <i class="bi bi-signpost"></i>
+              <h3>Routes minières</h3>
+              <p>Accès lourds, plateformes et voies de circulation pour sites industriels.</p>
+            </div>
+
+            <div class="mine-item">
+              <i class="bi bi-buildings"></i>
+              <h3>Structures métalliques</h3>
+              <p>Solutions adaptées aux installations techniques et zones industrielles.</p>
+            </div>
+
+            <div class="mine-item">
+              <i class="bi bi-truck-front"></i>
+              <h3>Logistique chantier</h3>
+              <p>Transport, approvisionnement, coordination et support opérationnel.</p>
+            </div>
+
+            <div class="mine-item">
+              <i class="bi bi-bricks"></i>
+              <h3>Génie civil industriel</h3>
+              <p>Fondations, plateformes, murs, ouvrages et infrastructures spécialisées.</p>
+            </div>
+
+            <div class="mine-item">
+              <i class="bi bi-shield-check"></i>
+              <h3>Sécurité & conformité</h3>
+              <p>Approche sérieuse pour les sites à fortes exigences opérationnelles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <section class="section-light">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 reveal">
+          <div class="section-title mb-0">
+            <span class="section-kicker">Pourquoi nous choisir</span>
+            <h2>Une approche claire, professionnelle et orientée résultats.</h2>
+            <p>
+              Le site doit transmettre une impression de solidité immédiate :
+              organisation, sérieux, capacité d’exécution, communication moderne et crédibilité business.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-6 reveal">
+          <div class="why-list">
+            <div class="why-item">
+              <i class="bi bi-check2-circle"></i>
+              <div>
+                <h3>Positionnement haut de gamme</h3>
+                <p>Une image corporate pensée pour inspirer confiance aux investisseurs et grands clients.</p>
+              </div>
+            </div>
+
+            <div class="why-item">
+              <i class="bi bi-people"></i>
+              <div>
+                <h3>Vision partenariale</h3>
+                <p>Capacité à travailler avec entreprises, institutions, donneurs d’ordre et partenaires internationaux.</p>
+              </div>
+            </div>
+
+            <div class="why-item">
+              <i class="bi bi-speedometer2"></i>
+              <div>
+                <h3>Réactivité commerciale</h3>
+                <p>Accès rapide aux demandes de devis, WhatsApp Business, appel direct et formulaire de contact.</p>
+              </div>
+            </div>
+
+            <div class="why-item">
+              <i class="bi bi-globe2"></i>
+              <div>
+                <h3>Ambition régionale</h3>
+                <p>Présence Guinée et Cameroun, avec une vision Afrique de l’Ouest et Afrique Centrale.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4 mt-5">
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="counter-card">
+            <strong data-count="10">0</strong>
+            <span>Métiers complémentaires</span>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="counter-card">
+            <strong data-count="2">0</strong>
+            <span>Pays de présence</span>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="counter-card">
+            <strong data-count="100">0</strong>
+            <span>% orientation client</span>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="counter-card">
+            <strong data-count="24">0</strong>
+            <span>Heures pour répondre</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="section-kicker">Témoignages</span>
+        <h2>Une communication pensée pour rassurer.</h2>
+        <p>
+          Ces témoignages sont des exemples de maquette. Ils pourront être remplacés par des avis réels,
+          partenaires, clients ou références vérifiées.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-4 reveal">
+          <div class="testimonial-card">
+            <div class="stars">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              “Une entreprise avec une présentation sérieuse, structurée et adaptée aux projets d’envergure.”
+            </p>
+            <h3 class="h6 fw-bold mb-0">Direction projet</h3>
+            <small class="text-secondary">Secteur privé</small>
+          </div>
+        </div>
+
+        <div class="col-lg-4 reveal">
+          <div class="testimonial-card">
+            <div class="stars">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              “Le positionnement inspire confiance pour des collaborations BTP, infrastructures et logistique.”
+            </p>
+            <h3 class="h6 fw-bold mb-0">Partenaire technique</h3>
+            <small class="text-secondary">Infrastructures</small>
+          </div>
+        </div>
+
+        <div class="col-lg-4 reveal">
+          <div class="testimonial-card">
+            <div class="stars">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              “Une image professionnelle, crédible et claire pour convaincre des clients institutionnels.”
+            </p>
+            <h3 class="h6 fw-bold mb-0">Consultant business</h3>
+            <small class="text-secondary">Développement Afrique</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-light">
+    <div class="container">
+      <div class="contact-band reveal">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7">
+            <h2>Vous avez un projet en Guinée ?</h2>
+            <p class="mb-lg-0">
+              Construction, génie civil, routes, mines, infrastructures ou logistique chantier :
+              contactez LTP Construction Guinée pour une demande de devis ou un échange professionnel.
+            </p>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="d-flex flex-wrap gap-3 justify-content-lg-end">
+              <a class="btn-premium" href="devis.html">
+                <i class="bi bi-file-earmark-text"></i>
+                Demande de devis
+              </a>
+              <a class="btn-outline-premium" href="contact.html">
+                <i class="bi bi-envelope"></i>
+                Contact
+              </a>
+              <a class="btn-outline-premium" href="https://wa.me/224000000000">
+                <i class="bi bi-whatsapp"></i>
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <h3>LTP Construction Guinée</h3>
+          <p>
+            Construction, BTP, génie civil, mines, infrastructures, immobilier,
+            maintenance industrielle et logistique chantier.
+          </p>
+        </div>
+
+        <div class="col-md-4 col-lg-2">
+          <h4 class="h6">Navigation</h4>
+          <a href="index.html">Accueil</a>
+          <a href="a-propos.html">À propos</a>
+          <a href="services.html">Services</a>
+          <a href="projets.html">Projets</a>
+        </div>
+
+        <div class="col-md-4 col-lg-3">
+          <h4 class="h6">Business</h4>
+          <a href="mines-infrastructures.html">Mines & Infrastructures</a>
+          <a href="devis.html">Demande de devis</a>
+          <a href="blog.html">Actualités</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="col-md-4 col-lg-3">
+          <h4 class="h6">Emails professionnels</h4>
+          <a href="mailto:contact@ltpconstruction.com">contact@ltpconstruction.com</a>
+          <a href="mailto:devis@ltpconstruction.com">devis@ltpconstruction.com</a>
+          <a href="mailto:rh@ltpconstruction.com">rh@ltpconstruction.com</a>
+        </div>
+      </div>
+
+      <hr class="border-secondary my-4">
+
+      <div class="d-flex flex-column flex-md-row justify-content-between gap-2">
+        <small>© 2026 LTP Construction SARLU. Tous droits réservés.</small>
+        <small>Guinée · Cameroun · Afrique de l’Ouest · Afrique Centrale</small>
+      </div>
+    </div>
+  </footer>
+
+  <aside class="floating-contact" aria-label="Contacts rapides">
+    <a href="https://wa.me/224000000000" aria-label="WhatsApp Business">
+      <i class="bi bi-whatsapp"></i>
+    </a>
+    <a href="tel:+224000000000" aria-label="Appeler LTP Construction">
+      <i class="bi bi-telephone"></i>
+    </a>
+    <a href="devis.html" aria-label="Demander un devis">
+      <i class="bi bi-file-earmark-text"></i>
+    </a>
+  </aside>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const navbar = document.getElementById("navbar");
+    const reveals = document.querySelectorAll(".reveal");
+    const counters = document.querySelectorAll("[data-count]");
+    let countersStarted = false;
+
+    function animateCounters() {
+      counters.forEach((counter) => {
+        const target = Number(counter.dataset.count);
+        let current = 0;
+        const step = Math.max(1, Math.ceil(target / 45));
+
+        const interval = setInterval(() => {
+          current += step;
+
+          if (current >= target) {
+            counter.textContent = target;
+            clearInterval(interval);
+            return;
+          }
+
+          counter.textContent = current;
+        }, 24);
+      });
+    }
+
+    function handleScroll() {
+      navbar.classList.toggle("scrolled", window.scrollY > 20);
+
+      reveals.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+
+        if (rect.top < window.innerHeight - 80) {
+          el.classList.add("visible");
+        }
+      });
+
+      if (!countersStarted && counters.length) {
+        const firstCounter = counters[0].getBoundingClientRect();
+
+        if (firstCounter.top < window.innerHeight - 80) {
+          countersStarted = true;
+          animateCounters();
+        }
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("load", handleScroll);
+  </script>
+</body>
+</html>
