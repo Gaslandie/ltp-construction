@@ -1,108 +1,134 @@
-# Back-Office Maquette — LTP Construction SARLU
+# Jour 1 — Architecture & navigation
 
 ## Objectif
+Créer la base complète du back-office.
 
-Créer une maquette premium et professionnelle du back-office LTP Construction SARLU.
+## À réaliser
+- structure dossiers/fichiers ;
+- sidebar responsive ;
+- topbar ;
+- layout global ;
+- navigation entre pages ;
+- structure commune Guinée/Cameroun ;
+- pages reliées ;
+- thème admin global ;
+- responsive desktop/mobile.
 
-Le back-office est une interface visuelle non connectée à une vraie base de données pour le moment, mais avec certaines interactions fonctionnelles en JavaScript local :
-- login local ;
-- navigation ;
+## Résultat attendu
+Le back-office est navigable même si les modules sont encore vides.
+
+---
+
+# Jour 2 — Login & sécurité visuelle
+
+## Objectif
+Créer un accès administrateur crédible.
+
+## À réaliser
+- page login ;
+- authentification locale JS ;
+- redirection selon pays ;
+- session localStorage ;
+- protection visuelle pages ;
+- bouton déconnexion ;
+- gestion erreurs connexion.
+
+## Résultat attendu
+Impossible d’accéder au dashboard sans connexion.
+
+---
+
+# Jour 3 — Dashboard & analytics
+
+## Objectif
+Donner une impression de système vivant.
+
+## À réaliser
+- cartes statistiques ;
+- graphiques fictifs ;
+- activité récente ;
+- notifications ;
+- mini Google Analytics ;
+- widgets ;
+- indicateurs pays.
+
+## Résultat attendu
+Le dashboard paraît déjà réellement utilisé par l’entreprise.
+
+---
+
+# Jour 4 — Gestion employés
+
+## Objectif
+Répondre au besoin principal du client.
+
+## À réaliser
+- liste employés ;
+- profils ;
+- statuts ;
+- rôles ;
+- emails professionnels ;
+- recherche ;
+- filtres ;
+- détails employés.
+
+## Résultat attendu
+Le client peut visualiser l’organisation de son entreprise.
+
+---
+
+# Jour 5 — Gestion emails professionnels
+
+## Objectif
+Simuler une gestion professionnelle des emails.
+
+## À réaliser
+- tableau emails ;
+- demandes création ;
+- formulaires ;
+- statuts comptes ;
+- historique ;
+- badges ;
+- modals simples.
+
+## Résultat attendu
+Le client comprend comment gérer les emails entreprise plus tard.
+
+---
+
+# Jour 6 — Projets, devis & messages
+
+## Objectif
+Couvrir l’activité opérationnelle de l’entreprise.
+
+## À réaliser
+- gestion projets ;
+- gestion devis ;
+- gestion messages ;
 - tableaux ;
 - filtres ;
-- états ;
-- animations ;
-- responsive.
+- badges statut ;
+- détails projets ;
+- actions fictives.
 
-Le design doit rester cohérent avec le site principal :
-- bleu foncé premium ;
-- gold ;
-- vert ;
-- glassmorphism léger ;
-- style corporate BTP moderne.
+## Résultat attendu
+Le back-office couvre les besoins métier essentiels.
 
 ---
 
-# Modules du Back-Office
+# Jour 7 — Paramètres & finitions
 
-## 1. Dashboard
-- statistiques générales ;
-- activité récente ;
-- accès rapide ;
-- widgets ;
-- notifications.
+## Objectif
+Finaliser une maquette premium présentable au client.
 
-## 2. Google Analytics (maquette)
-- visiteurs ;
-- pages populaires ;
-- pays visiteurs ;
-- évolution trafic ;
-- demandes de devis.
+## À réaliser
+- paramètres entreprise ;
+- responsive final ;
+- animations simples ;
+- micro-interactions ;
+- cohérence visuelle ;
+- optimisation UI ;
+- nettoyage structure.
 
-## 3. Gestion des employés
-- liste employés ;
-- rôles ;
-- pays ;
-- téléphone ;
-- email professionnel ;
-- statut :
-  - actif ;
-  - suspendu ;
-  - quitté l’entreprise.
-
-## 4. Gestion emails professionnels
-- création d’emails ;
-- rôles ;
-- statut ;
-- historique ;
-- gestion comptes.
-
-## 5. Gestion projets
-- projets ;
-- chantiers ;
-- statut ;
-- pays ;
-- budget ;
-- galerie images.
-
-## 6. Gestion devis
-- demandes ;
-- statut ;
-- clients ;
-- export fictif PDF.
-
-## 7. Gestion messages
-- formulaires contact ;
-- partenaires ;
-- candidatures ;
-- support.
-
-## 8. Paramètres
-- informations entreprise ;
-- réseaux sociaux ;
-- contacts ;
-- langues ;
-- pays actifs.
-
----
-
-# Structure prévue
-
-```text
-admin/
-  index.html
-  dashboard.html
-  employees.html
-  emails.html
-  analytics.html
-  projects.html
-  quotes.html
-  messages.html
-  settings.html
-
-  assets/
-    css/
-      admin.css
-
-    js/
-      admin.js
-
+## Résultat attendu
+Maquette professionnelle prête à être présentée au client.
