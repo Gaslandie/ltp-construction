@@ -1,23 +1,4 @@
-# Jour 1 — Architecture & navigation
 
-## Objectif
-Créer la base complète du back-office.
-
-## À réaliser
-- structure dossiers/fichiers ;
-- sidebar responsive ;
-- topbar ;
-- layout global ;
-- navigation entre pages ;
-- structure commune Guinée/Cameroun ;
-- pages reliées ;
-- thème admin global ;
-- responsive desktop/mobile.
-
-## Résultat attendu
-Le back-office est navigable même si les modules sont encore vides.
-
----
 
 # Jour 2 — Login & sécurité visuelle
 

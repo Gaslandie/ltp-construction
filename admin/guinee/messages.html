@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Messages — Admin Guinée | LTP Construction SARLU</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body>
+
+  <div class="admin-layout" id="adminLayout">
+
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="sidebar-header">
+        <a class="sidebar-brand" href="../../index.html" aria-label="Site public LTP Construction">
+          <span class="sidebar-brand-mark">LTP</span>
+          <span class="sidebar-brand-name">LTP Construction <small>Back-office</small></span>
+        </a>
+        <button class="sidebar-close-btn" id="sidebarCloseBtn" aria-label="Fermer le menu">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+
+      <div class="sidebar-entities">
+        <a href="../guinee/messages.html" class="entity-btn entity-guinee active" aria-current="true">
+          <i class="bi bi-geo-alt-fill"></i> Guinée
+        </a>
+        <a href="../cameroun/messages.html" class="entity-btn entity-cameroun">
+          <i class="bi bi-geo-alt"></i> Cameroun
+        </a>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Navigation Guinée">
+        <a href="dashboard.html" class="sidebar-link" data-page="dashboard">
+          <i class="bi bi-speedometer2"></i><span>Tableau de bord</span>
+        </a>
+        <a href="employees.html" class="sidebar-link" data-page="employees">
+          <i class="bi bi-people"></i><span>Employés</span>
+        </a>
+        <a href="emails.html" class="sidebar-link" data-page="emails">
+          <i class="bi bi-envelope"></i><span>Emails</span>
+        </a>
+        <a href="analytics.html" class="sidebar-link" data-page="analytics">
+          <i class="bi bi-bar-chart-line"></i><span>Analytiques</span>
+        </a>
+        <a href="projects.html" class="sidebar-link" data-page="projects">
+          <i class="bi bi-kanban"></i><span>Projets</span>
+        </a>
+        <a href="quotes.html" class="sidebar-link" data-page="quotes">
+          <i class="bi bi-file-earmark-text"></i><span>Devis</span>
+        </a>
+        <a href="messages.html" class="sidebar-link" data-page="messages">
+          <i class="bi bi-chat-dots"></i><span>Messages</span>
+        </a>
+        <a href="settings.html" class="sidebar-link" data-page="settings">
+          <i class="bi bi-gear"></i><span>Paramètres</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="../index.html" class="sidebar-link sidebar-footer-link">
+          <i class="bi bi-house"></i><span>Accueil admin</span>
+        </a>
+        <a href="../../index.html" class="sidebar-link sidebar-footer-link">
+          <i class="bi bi-globe2"></i><span>Site public</span>
+        </a>
+      </div>
+    </aside>
+
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Ouvrir la navigation">
+          <i class="bi bi-list"></i>
+        </button>
+        <div class="topbar-title">
+          <span class="entity-badge entity-guinee">Guinée</span>
+          <h1 class="topbar-h1">Messages</h1>
+        </div>
+        <div class="topbar-end">
+          <a href="../index.html" class="logout-btn"><i class="bi bi-box-arrow-right"></i><span>Déconnexion</span></a>
+        </div>
+      </header>
+
+      <main class="admin-content" id="adminContent">
+        <section class="page-head">
+          <div>
+            <nav class="admin-breadcrumb" aria-label="Fil d’Ariane">
+              <a href="../index.html">Admin</a>
+              <i class="bi bi-chevron-right"></i>
+              <span>Guinée</span>
+              <i class="bi bi-chevron-right"></i>
+              <strong>Messages</strong>
+            </nav>
+            <h2>Messages</h2>
+            <p>Centralisation des messages clients. Interface prête à connecter aux données métier.</p>
+          </div>
+          <div class="country-panel entity-guinee">
+            <span>Pays actif</span>
+            <strong>Guinée</strong>
+          </div>
+        </section>
+
+        <section class="metrics-grid" aria-label="Indicateurs principaux">
+          <article class="metric-card">
+            <span class="metric-icon"><i class="bi bi-envelope-exclamation"></i></span>
+            <div>
+              <strong>5</strong>
+              <span>Non lus</span>
+            </div>
+          </article>
+          <article class="metric-card">
+            <span class="metric-icon"><i class="bi bi-calendar2-day"></i></span>
+            <div>
+              <strong>12</strong>
+              <span>Aujourd’hui</span>
+            </div>
+          </article>
+          <article class="metric-card">
+            <span class="metric-icon"><i class="bi bi-check-all"></i></span>
+            <div>
+              <strong>38</strong>
+              <span>Traités</span>
+            </div>
+          </article>
+          <article class="metric-card">
+            <span class="metric-icon"><i class="bi bi-lightning"></i></span>
+            <div>
+              <strong>2</strong>
+              <span>Urgents</span>
+            </div>
+          </article>
+        </section>
+
+        <section class="module-grid">
+          <article class="module-card module-card-main">
+            <div class="module-card-head">
+              <span class="module-icon"><i class="bi bi-chat-dots"></i></span>
+              <div>
+                <h3>File messages</h3>
+                <p>Structure visuelle prête pour les contenus du module.</p>
+              </div>
+            </div>
+            <ul class="module-list">
+              <li><span>Nouvelles demandes contact</span><em>Prévu</em></li>
+              <li><span>Questions commerciales</span><em>En attente</em></li>
+              <li><span>Suivi après rendez-vous</span><em>À valider</em></li>
+            </ul>
+          </article>
+
+          <article class="module-card">
+            <div class="module-card-head compact">
+              <span class="module-icon muted"><i class="bi bi-ui-checks-grid"></i></span>
+              <div>
+                <h3>Priorités</h3>
+                <p>Repères fonctionnels.</p>
+              </div>
+            </div>
+            <ul class="check-list">
+              <li><i class="bi bi-check2"></i>Réponse rapide</li>
+              <li><i class="bi bi-check2"></i>Affectation interne</li>
+              <li><i class="bi bi-check2"></i>Historique client</li>
+            </ul>
+          </article>
+        </section>
+      </main>
+    </div>
+
+  </div>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/admin.js"></script>
+</body>
+</html>
