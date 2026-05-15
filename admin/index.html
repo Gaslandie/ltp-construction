@@ -3,464 +3,114 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Administration | LTP Construction SARLU</title>
-  <meta name="description" content="Espace administration LTP Construction SARLU en préparation : gestion interne, comptes employés, emails professionnels et back-office futur.">
+  <title>Connexion Admin | LTP Construction SARLU</title>
+  <meta name="description" content="Accès administrateur local de démonstration pour le back-office LTP Construction SARLU.">
   <meta name="robots" content="noindex, nofollow">
-
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
-
-  <style>
-    :root {
-      --ltp-blue: #0b2d4d;
-      --ltp-blue-2: #123f69;
-      --ltp-gold: #c9a55b;
-      --ltp-green: #2f7d5c;
-      --ltp-dark: #111827;
-      --ltp-muted: #64748b;
-      --ltp-light: #f5f7fa;
-      --ltp-border: rgba(255,255,255,.14);
-      --shadow-premium: 0 30px 90px rgba(2, 12, 27, .28);
-      --transition: all .35s ease;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      color: #fff;
-      background:
-        linear-gradient(120deg, rgba(5, 17, 31, .96), rgba(11, 45, 77, .82)),
-        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1920&q=85") center/cover no-repeat;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at 16% 18%, rgba(201,165,91,.22), transparent 26%),
-        radial-gradient(circle at 84% 78%, rgba(47,125,92,.18), transparent 28%);
-    }
-
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: .15;
-      background-image:
-        linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
-      background-size: 52px 52px;
-      mask-image: linear-gradient(to bottom, #000, transparent 80%);
-    }
-
-    a { text-decoration: none; }
-
-    .admin-shell {
-      position: relative;
-      z-index: 2;
-      min-height: 100vh;
-      display: grid;
-      align-items: center;
-      padding: 80px 0;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 13px;
-      color: #fff;
-      font-weight: 900;
-      letter-spacing: -.04em;
-      margin-bottom: 34px;
-    }
-
-    .brand-mark {
-      width: 52px;
-      height: 52px;
-      border-radius: 17px;
-      display: grid;
-      place-items: center;
-      color: var(--ltp-blue);
-      background: linear-gradient(135deg, #fff, #d7e6f5);
-      box-shadow: 0 16px 36px rgba(0,0,0,.26);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .brand-mark::after {
-      content: "";
-      position: absolute;
-      width: 70%;
-      height: 3px;
-      bottom: 12px;
-      left: 15%;
-      border-radius: 50px;
-      background: linear-gradient(90deg, var(--ltp-gold), var(--ltp-green));
-    }
-
-    .brand small {
-      display: block;
-      margin-top: 2px;
-      color: rgba(255,255,255,.68);
-      font-size: .76rem;
-      font-weight: 700;
-      letter-spacing: .09em;
-      text-transform: uppercase;
-    }
-
-    .admin-card {
-      border-radius: 38px;
-      background: rgba(255,255,255,.1);
-      border: 1px solid rgba(255,255,255,.15);
-      backdrop-filter: blur(20px);
-      box-shadow: var(--shadow-premium);
-      overflow: hidden;
-    }
-
-    .admin-main {
-      padding: 54px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      width: fit-content;
-      padding: 9px 14px;
-      border-radius: 999px;
-      color: rgba(255,255,255,.9);
-      background: rgba(255,255,255,.1);
-      border: 1px solid rgba(255,255,255,.16);
-      backdrop-filter: blur(12px);
-      font-size: .8rem;
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow span {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--ltp-gold);
-      box-shadow: 0 0 0 6px rgba(201,165,91,.15);
-    }
-
-    h1 {
-      margin: 24px 0 18px;
-      font-size: clamp(2.6rem, 6vw, 5.2rem);
-      line-height: .94;
-      font-weight: 900;
-      letter-spacing: -.075em;
-    }
-
-    .lead-text {
-      max-width: 760px;
-      color: rgba(255,255,255,.74);
-      font-size: clamp(1.02rem, 1.7vw, 1.28rem);
-      line-height: 1.75;
-    }
-
-    .btn-premium {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      border: 0;
-      border-radius: 999px;
-      padding: 13px 21px;
-      color: var(--ltp-blue);
-      background: #fff;
-      font-weight: 900;
-      box-shadow: 0 18px 38px rgba(0, 0, 0, .18);
-      transition: var(--transition);
-    }
-
-    .btn-premium:hover {
-      color: var(--ltp-blue);
-      transform: translateY(-3px);
-      background: linear-gradient(135deg, #fff, #f3dfad);
-    }
-
-    .btn-outline-premium {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      border: 1px solid rgba(255,255,255,.18);
-      border-radius: 999px;
-      padding: 12px 20px;
-      color: #fff;
-      background: rgba(255,255,255,.08);
-      font-weight: 900;
-      transition: var(--transition);
-    }
-
-    .btn-outline-premium:hover {
-      color: #fff;
-      background: rgba(255,255,255,.14);
-      transform: translateY(-3px);
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-top: 38px;
-    }
-
-    .feature-card {
-      padding: 22px;
-      border-radius: 24px;
-      background: rgba(255,255,255,.09);
-      border: 1px solid rgba(255,255,255,.13);
-    }
-
-    .feature-card i {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 14px;
-      border-radius: 14px;
-      color: var(--ltp-gold);
-      background: rgba(255,255,255,.1);
-    }
-
-    .feature-card h2 {
-      margin-bottom: 8px;
-      font-size: 1rem;
-      font-weight: 900;
-    }
-
-    .feature-card p {
-      margin: 0;
-      color: rgba(255,255,255,.66);
-      line-height: 1.6;
-      font-size: .94rem;
-    }
-
-    .admin-side {
-      height: 100%;
-      padding: 42px;
-      background: rgba(255,255,255,.08);
-      border-left: 1px solid rgba(255,255,255,.12);
-    }
-
-    .login-box {
-      padding: 28px;
-      border-radius: 28px;
-      background: rgba(255,255,255,.1);
-      border: 1px solid rgba(255,255,255,.14);
-    }
-
-    .login-box h2 {
-      font-weight: 900;
-      letter-spacing: -.04em;
-      margin-bottom: 10px;
-    }
-
-    .login-box p {
-      color: rgba(255,255,255,.68);
-      line-height: 1.65;
-    }
-
-    .form-label {
-      font-weight: 800;
-      color: rgba(255,255,255,.9);
-    }
-
-    .form-control {
-      min-height: 54px;
-      border-radius: 17px;
-      border: 1px solid rgba(255,255,255,.16);
-      color: #fff;
-      background: rgba(255,255,255,.08);
-      box-shadow: none;
-      padding: 13px 16px;
-      font-weight: 600;
-    }
-
-    .form-control::placeholder {
-      color: rgba(255,255,255,.42);
-    }
-
-    .form-control:focus {
-      color: #fff;
-      background: rgba(255,255,255,.12);
-      border-color: rgba(201,165,91,.45);
-      box-shadow: 0 0 0 .25rem rgba(201,165,91,.08);
-    }
-
-    .security-note {
-      margin-top: 20px;
-      padding: 16px;
-      border-radius: 20px;
-      color: rgba(255,255,255,.7);
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.12);
-      line-height: 1.6;
-      font-size: .92rem;
-    }
-
-    .bottom-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    @media (max-width: 991.98px) {
-      .admin-main,
-      .admin-side {
-        padding: 32px;
-      }
-
-      .admin-side {
-        border-left: 0;
-        border-top: 1px solid rgba(255,255,255,.12);
-      }
-
-      .feature-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 575.98px) {
-      .admin-shell {
-        padding: 36px 0;
-      }
-
-      .admin-main,
-      .admin-side {
-        padding: 24px;
-      }
-
-      .btn-premium,
-      .btn-outline-premium {
-        width: 100%;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/admin.css">
 </head>
+<body class="admin-login-page" data-admin-page="login">
 
-<body>
-  <main class="admin-shell">
-    <div class="container">
-      <a class="brand" href="../index.html" aria-label="Retour portail LTP Construction">
-        <span class="brand-mark">LTP</span>
-        <span>
-          LTP Construction
-          <small>Espace administration</small>
+  <main class="admin-login-shell">
+    <div class="admin-login-card">
+      <section class="admin-login-panel">
+        <a class="login-brand" href="../index.html" aria-label="Retour au portail LTP Construction">
+          <span class="login-brand-mark">LTP</span>
+          <span class="login-brand-text">LTP Construction <small>Back-office local</small></span>
+        </a>
+
+        <span class="login-kicker">
+          <i class="bi bi-shield-lock"></i>
+          Accès administrateur
         </span>
-      </a>
 
-      <div class="admin-card">
-        <div class="row g-0">
-          <div class="col-lg-7">
-            <section class="admin-main">
-              <div class="eyebrow"><span></span> Back-office futur</div>
-              <h1>Administration en préparation.</h1>
-              <p class="lead-text">
-                Cette page réserve l’espace du futur back-office LTP Construction :
-                gestion centralisée, comptes employés, accès internes, emails professionnels,
-                demandes de devis et contenus du site.
-              </p>
+        <h1 class="login-title">Connexion locale de démonstration</h1>
+        <p class="login-intro">
+          Accès réservé aux administrateurs Guinée et Cameroun. Authentification purement front-end pour la maquette.
+        </p>
 
-              <div class="bottom-links">
-                <a class="btn-premium" href="../index.html">
-                  <i class="bi bi-globe2"></i>
-                  Retour au portail
-                </a>
-                <a class="btn-outline-premium" href="../guinee/index.html">
-                  <i class="bi bi-arrow-right"></i>
-                  Voir LTP Guinée
-                </a>
-                <a class="btn-outline-premium" href="../cameroun/index.html">
-                  <i class="bi bi-arrow-right"></i>
-                  Voir LTP Cameroun
-                </a>
-              </div>
+        <div class="login-points">
+          <article class="login-point-card">
+            <i class="bi bi-laptop"></i>
+            <div>
+              <strong>Sans backend</strong>
+              <span>Validation locale via JavaScript et stockage navigateur.</span>
+            </div>
+          </article>
+          <article class="login-point-card">
+            <i class="bi bi-building"></i>
+            <div>
+              <strong>Accès par entité</strong>
+              <span>Chaque compte redirige vers son dashboard dédié.</span>
+            </div>
+          </article>
+          <article class="login-point-card">
+            <i class="bi bi-phone"></i>
+            <div>
+              <strong>Responsive</strong>
+              <span>Écran optimisé desktop, tablette et mobile.</span>
+            </div>
+          </article>
+        </div>
+      </section>
 
-              <div class="feature-grid">
-                <article class="feature-card">
-                  <i class="bi bi-people"></i>
-                  <h2>Comptes employés</h2>
-                  <p>Création, désactivation et gestion des accès internes selon les rôles.</p>
-                </article>
-
-                <article class="feature-card">
-                  <i class="bi bi-envelope-check"></i>
-                  <h2>Emails professionnels</h2>
-                  <p>Suivi des adresses comme contact, devis et RH selon les besoins futurs.</p>
-                </article>
-
-                <article class="feature-card">
-                  <i class="bi bi-file-earmark-text"></i>
-                  <h2>Demandes de devis</h2>
-                  <p>Centralisation possible des demandes commerciales et contacts entrants.</p>
-                </article>
-
-                <article class="feature-card">
-                  <i class="bi bi-newspaper"></i>
-                  <h2>Contenus du site</h2>
-                  <p>Gestion future des actualités, projets, services et informations corporate.</p>
-                </article>
-              </div>
-            </section>
+      <section class="admin-login-form-panel">
+        <div class="login-form-box">
+          <div class="login-form-head">
+            <span class="login-form-badge">Back-office JOUR 2</span>
+            <h2>Se connecter</h2>
+            <p>Utilisez un compte fictif valide pour accéder au back-office.</p>
           </div>
 
-          <div class="col-lg-5">
-            <aside class="admin-side">
-              <div class="login-box">
-                <h2>Connexion interne</h2>
-                <p>
-                  Interface visuelle uniquement pour la maquette.
-                  L’authentification réelle sera ajoutée plus tard avec un backend sécurisé.
-                </p>
+          <div class="login-demo-accounts" aria-label="Comptes de démonstration">
+            <article class="demo-account-card">
+              <strong>Guinée</strong>
+              <span>admin_guinee@ltpconstruction.com</span>
+              <code>LTP2026GN</code>
+            </article>
+            <article class="demo-account-card">
+              <strong>Cameroun</strong>
+              <span>admin_cameroun@ltpconstruction.com</span>
+              <code>LTP2026CM</code>
+            </article>
+          </div>
 
-                <form>
-                  <div class="mb-3">
-                    <label class="form-label" for="email">Email professionnel</label>
-                    <input class="form-control" type="email" id="email" placeholder="nom@ltpconstruction.com">
-                  </div>
+          <form id="adminLoginForm" class="admin-login-form" novalidate>
+            <label class="login-field" for="adminEmail">
+              <span>Email administrateur</span>
+              <input type="email" id="adminEmail" name="email" placeholder="admin@ltpconstruction.com" autocomplete="username" required>
+            </label>
 
-                  <div class="mb-4">
-                    <label class="form-label" for="password">Mot de passe</label>
-                    <input class="form-control" type="password" id="password" placeholder="••••••••">
-                  </div>
+            <label class="login-field" for="adminPassword">
+              <span>Mot de passe</span>
+              <input type="password" id="adminPassword" name="password" placeholder="Votre mot de passe" autocomplete="current-password" required>
+            </label>
 
-                  <button class="btn-premium w-100" type="button">
-                    <i class="bi bi-lock"></i>
-                    Accès bientôt disponible
-                  </button>
-                </form>
+            <div id="loginError" class="login-alert" role="alert" aria-live="polite" hidden></div>
 
-                <div class="security-note">
-                  <strong>Sécurité prévue :</strong> accès employés, rôles, désactivation des comptes après départ salarié,
-                  journalisation et protection des données internes.
-                </div>
-              </div>
-            </aside>
+            <button type="submit" class="login-submit-btn" id="adminLoginSubmit">
+              <i class="bi bi-box-arrow-in-right"></i>
+              <span class="login-submit-label">Se connecter</span>
+            </button>
+          </form>
+
+          <div class="login-footer-links">
+            <a href="../index.html">
+              <i class="bi bi-arrow-left"></i>
+              Retour au portail public
+            </a>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/admin.js"></script>
 </body>
 </html>

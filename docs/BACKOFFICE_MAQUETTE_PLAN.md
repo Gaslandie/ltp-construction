@@ -1,42 +1,8 @@
 
 
-# Jour 2 — Login & sécurité visuelle
 
-## Objectif
-Créer un accès administrateur crédible.
 
-## À réaliser
-- page login ;
-- authentification locale JS ;
-- redirection selon pays ;
-- session localStorage ;
-- protection visuelle pages ;
-- bouton déconnexion ;
-- gestion erreurs connexion.
 
-## Résultat attendu
-Impossible d’accéder au dashboard sans connexion.
-
----
-
-# Jour 3 — Dashboard & analytics
-
-## Objectif
-Donner une impression de système vivant.
-
-## À réaliser
-- cartes statistiques ;
-- graphiques fictifs ;
-- activité récente ;
-- notifications ;
-- mini Google Analytics ;
-- widgets ;
-- indicateurs pays.
-
-## Résultat attendu
-Le dashboard paraît déjà réellement utilisé par l’entreprise.
-
----
 
 # Jour 4 — Gestion employés
 
