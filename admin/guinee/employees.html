@@ -99,76 +99,283 @@
               <strong>Employés</strong>
             </nav>
             <h2>Employés</h2>
-            <p>Base de gestion des comptes internes. Interface prête à connecter aux données métier.</p>
+            <p>Annuaire interne fictif pour visualiser les équipes, les départements et les statuts RH de LTP Construction Guinée.</p>
           </div>
           <div class="country-panel entity-guinee">
             <span>Pays actif</span>
             <strong>Guinée</strong>
+            <small>Conakry · Boké · Kankan</small>
           </div>
         </section>
 
         <section class="metrics-grid" aria-label="Indicateurs principaux">
-          <article class="metric-card">
-            <span class="metric-icon"><i class="bi bi-person-check"></i></span>
+          <article class="metric-card metric-card-stack">
+            <div class="metric-card-head">
+              <span class="metric-icon"><i class="bi bi-person-check"></i></span>
+              <span class="metric-chip success">Disponible</span>
+            </div>
             <div>
-              <strong>18</strong>
-              <span>Comptes actifs</span>
+              <strong>32</strong>
+              <span>Employés actifs</span>
+              <small>Équipes terrain, direction technique et support administratif mobilisés.</small>
             </div>
           </article>
-          <article class="metric-card">
-            <span class="metric-icon"><i class="bi bi-shield-lock"></i></span>
+          <article class="metric-card metric-card-stack">
+            <div class="metric-card-head">
+              <span class="metric-icon"><i class="bi bi-calendar2-week"></i></span>
+              <span class="metric-chip warning">RH</span>
+            </div>
             <div>
-              <strong>3</strong>
-              <span>Rôles admin</span>
+              <strong>4</strong>
+              <span>En congé</span>
+              <small>Congés planifiés sans impact critique sur les chantiers suivis.</small>
             </div>
           </article>
-          <article class="metric-card">
-            <span class="metric-icon"><i class="bi bi-person-plus"></i></span>
+          <article class="metric-card metric-card-stack">
+            <div class="metric-card-head">
+              <span class="metric-icon"><i class="bi bi-pause-circle"></i></span>
+              <span class="metric-chip warning">Suivi</span>
+            </div>
             <div>
               <strong>2</strong>
-              <span>Invitations</span>
+              <span>Suspendus</span>
+              <small>Dossiers internes en attente de décision administrative.</small>
             </div>
           </article>
-          <article class="metric-card">
-            <span class="metric-icon"><i class="bi bi-diagram-3"></i></span>
+          <article class="metric-card metric-card-stack">
+            <div class="metric-card-head">
+              <span class="metric-icon"><i class="bi bi-person-dash"></i></span>
+              <span class="metric-chip info">Historique</span>
+            </div>
             <div>
-              <strong>5</strong>
-              <span>Services</span>
+              <strong>3</strong>
+              <span>Ont quitté l’entreprise</span>
+              <small>Anciennes ressources conservées dans la vue maquette RH.</small>
             </div>
           </article>
         </section>
 
-        <section class="module-grid">
-          <article class="module-card module-card-main">
-            <div class="module-card-head">
-              <span class="module-icon"><i class="bi bi-people"></i></span>
-              <div>
-                <h3>Liste employés</h3>
-                <p>Structure visuelle prête pour les contenus du module.</p>
-              </div>
+        <section class="module-card employees-card">
+          <div class="module-card-head employees-card-head">
+            <span class="module-icon"><i class="bi bi-people"></i></span>
+            <div>
+              <h3>Liste employés Guinée</h3>
+              <p>Données fictives pour présenter la future gestion RH sans backend ni API.</p>
             </div>
-            <ul class="module-list">
-              <li><span>Direction technique</span><em>Prévu</em></li>
-              <li><span>Administration</span><em>En attente</em></li>
-              <li><span>Commercial et relation client</span><em>À valider</em></li>
-            </ul>
-          </article>
+            <button class="employee-primary-action" type="button" data-employee-action="Ajouter employé">
+              <i class="bi bi-person-plus"></i>
+              <span>Ajouter employé</span>
+            </button>
+          </div>
 
-          <article class="module-card">
-            <div class="module-card-head compact">
-              <span class="module-icon muted"><i class="bi bi-ui-checks-grid"></i></span>
-              <div>
-                <h3>Accès prévus</h3>
-                <p>Repères fonctionnels.</p>
+          <div class="employees-client-summary" aria-label="Synthèse employés">
+            <article>
+              <span>En entreprise</span>
+              <strong>38</strong>
+              <small>Actifs, en congé ou suspendus.</small>
+            </article>
+            <article>
+              <span>Ont quitté</span>
+              <strong>3</strong>
+              <small>Profils conservés en historique.</small>
+            </article>
+            <article>
+              <span>Emails pro</span>
+              <strong>10/10</strong>
+              <small>Comptes fictifs déjà visibles.</small>
+            </article>
+          </div>
+
+          <div class="employees-toolbar" aria-label="Filtres employés">
+            <label class="employees-search">
+              <i class="bi bi-search"></i>
+              <input type="search" placeholder="Nom, poste, email ou téléphone" aria-label="Rechercher un employé">
+            </label>
+            <div class="employees-controls">
+              <label>
+                <span>Statut</span>
+                <select class="employees-select" data-employee-status-filter>
+                  <option value="Tous">Tous les statuts</option>
+                  <option value="Actif">Actif</option>
+                  <option value="En congé">En congé</option>
+                  <option value="Suspendu">Suspendu</option>
+                  <option value="A quitté l’entreprise">A quitté l’entreprise</option>
+                </select>
+              </label>
+              <label>
+                <span>Département</span>
+                <select class="employees-select" data-employee-department-filter>
+                  <option value="Tous">Tous départements</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div class="employees-result-bar">
+            <span data-employee-count>10 employés affichés</span>
+            <strong>Pays : Guinée</strong>
+          </div>
+          <div class="employee-action-feedback" data-employee-feedback hidden></div>
+          <div class="employees-empty-state" data-employee-empty hidden>
+            <i class="bi bi-search"></i>
+            <div>
+              <strong>Aucun employé trouvé</strong>
+              <span>Modifiez la recherche ou les filtres pour afficher des résultats.</span>
+            </div>
+          </div>
+
+          <div class="employees-table-wrap">
+            <table class="employees-table">
+              <thead>
+                <tr>
+                  <th>Nom complet</th>
+                  <th>Poste</th>
+                  <th>Département</th>
+                  <th>Téléphone</th>
+                  <th>Email professionnel</th>
+                  <th>Statut</th>
+                  <th>Date d’arrivée</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-employee-name="Mamadou Aliou Diallo" data-employee-role="Directeur technique" data-employee-department="Direction technique" data-employee-phone="+224 622 14 85 70" data-employee-email="mamadou.diallo@ltpconstruction.com" data-employee-status="Actif" data-employee-country="Guinée" data-employee-arrival="12 janvier 2021" data-employee-departure="" data-employee-manager="Direction générale Guinée" data-employee-activity="Validation du planning technique Conakry le 13 mai 2026">
+                  <td><strong>Mamadou Aliou Diallo</strong></td>
+                  <td>Directeur technique</td>
+                  <td>Direction technique</td>
+                  <td>+224 622 14 85 70</td>
+                  <td>mamadou.diallo@ltpconstruction.com</td>
+                  <td><span class="status-badge success"><i class="bi bi-circle-fill"></i>Actif</span></td>
+                  <td>12 janvier 2021</td>
+                  <td><button class="employee-action-btn" type="button" data-employee-details>Voir détails</button></td>
+                </tr>
+                <tr data-employee-name="Fatoumata Camara" data-employee-role="Responsable RH" data-employee-department="Administration" data-employee-phone="+224 628 44 19 36" data-employee-email="fatoumata.camara@ltpconstruction.com" data-employee-status="Actif" data-employee-country="Guinée" data-employee-arrival="3 mars 2022" data-employee-departure="" data-employee-manager="Mamadou Aliou Diallo" data-employee-activity="Mise à jour des dossiers congés le 12 mai 2026">
+                  <td><strong>Fatoumata Camara</strong></td>
+                  <td>Responsable RH</td>
+                  <td>Administration</td>
+                  <td>+224 628 44 19 36</td>
+                  <td>fatoumata.camara@ltpconstruction.com</td>
+                  <td><span class="status-badge success"><i class="bi bi-circle-fill"></i>Actif</span></td>
+                  <td>3 mars 2022</td>
+                  <td><button class="employee-action-btn" type="button" data-employee-details>Voir détails</button></td>
+                </tr>
+                <tr data-employee-name="Ibrahima Sory Bangoura" data-employee-role="Chef de chantier" data-employee-department="Travaux publics" data-employee-phone="+224 620 75 31 12" data-employee-email="ibrahima.bangoura@ltpconstruction.com" data-employee-status="Actif" data-employee-country="Guinée" data-employee-arrival="18 août 2020" data-employee-departure="" data-employee-manager="Mamadou Aliou Diallo" data-employee-activity="Rapport terrain transmis depuis Kankan le 14 mai 2026">
+                  <td><strong>Ibrahima Sory Bangoura</strong></td>
+                  <td>Chef de chantier</td>
+                  <td>Travaux publics</td>
+                  <td>+224 620 75 31 12</td>
+                  <td>ibrahima.bangoura@ltpconstruction.com</td>
+                  <td><span class="status-badge success"><i class="bi bi-circle-fill"></i>Actif</span></td>
+                  <td>18 août 2020</td>
+                  <td><button class="employee-action-btn" type="button" data-employee-details>Voir détails</button></td>
+                </tr>
+                <tr data-employee-name="Aissatou Bah" data-employee-role="Assistante administrative" data-employee-department="Administration" data-employee-phone="+224 626 90 22 41" data-employee-email="aissatou.bah@ltpconstruction.com" data-employee-status="En congé" data-employee-country="Guinée" data-employee-arrival="7 février 2023" data-employee-departure="" data-employee-manager="Fatoumata Camara" data-employee-activity="Congé validé jusqu’au 24 mai 2026">
+                  <td><strong>Aissatou Bah</strong></td>
+                  <td>Assistante administrative</td>
+                  <td>Administration</td>
+                  <td>+224 626 90 22 41</td>
+                  <td>aissatou.bah@ltpconstruction.com</td>
+                  <td><span class="status-badge warning"><i class="bi bi-circle-fill"></i>En congé</span></td>
+                  <td>7 février 2023</td>
+                  <td><button class="employee-action-btn" type="button" data-employee-details>Voir détails</button></td>
+                </tr>
+                <tr data-employee-name="Aboubacar Sylla" data-employee-role="Conducteur travaux" data-employee-department="Génie civil" data-employee-phone="+224 621 56 78 04" data-employee-email="aboubacar.sylla@ltpconstruction.com" data-employee-status="Actif" data-employee-country="Guinée" data-employee-arrival="26 mai 2021" data-employee-departure="" data-employee-manager="Mamadou Aliou Diallo" data-employee-activity="Brief sécurité chantier Boké clôturé le 10 mai 2026">
+                  <td><strong>Aboubacar Sylla</strong></td>
+                  <td>Conducteur travaux</td>
+                  <td>Génie civil</td>
+                  <td>+224 621 56 78 04</td>
+                  <td>aboubacar.sylla@ltpconstruction.com</td>
+                  <td><span class="status-badge success"><i class="bi bi-circle-fill"></i>Actif</span></td>
+                  <td>26 mai 2021</td>
+                  <td><button class="employee-action-btn" type="button" data-employee-details>Voir détails</button></td>
+                </tr>
+                <tr data-employee-name="Mariama Kourouma" data-employee-role="Comptable" data-employee-department="Finance" data-employee-phone="+224 629 33 60 18" data-employee-email="mariama.kourouma@ltpconstruction.com" data-employee-status="Actif" data-employee-country="Guinée" data-employee-arrival="14 septembre 2022" data-employee-departure="" data-employee-manager="Direction administrative" data-employee-activity="Contrôle des avances chantier le 9 mai 2026">
+                  <td><strong>Mariama Kourouma</strong></td>
+                  <td>Comptable</td>
+                  <td>Finance</td>
+                  <td>+224 629 33 60 18</td>
+                  <td>mariama.kourouma@ltpconstruction.com</td>
+                  <td><span class="status-badge success"><i class="bi bi-circle-fill"></i>Actif</span></td>
+                  <td>14 septembre 2022</td>
+                  <td><button class="employee-action-btn" type="button" data-employee-details>Voir détails</button></td>
+                </tr>
+                <tr data-employee-name="Ousmane Keita" data-employee-role="Responsable logistique" data-employee-department="Logistique chantier" data-employee-phone="+224 625 48 10 92" data-employee-email="ousmane.keita@ltpconstruction.com" data-employee-status="Suspendu" data-employee-country="Guinée" data-employee-arrival="5 novembre 2021" data-employee-departure="" data-employee-manager="Mamadou Aliou Diallo" data-employee-activity="Accès suspendu pour revue administrative le 6 mai 2026">
+                  <td><strong>Ousmane Keita</strong></td>
+                  <td>Responsable logistique</td>
+                  <td>Logistique chantier</td>
+                  <td>+224 625 48 10 92</td>
+                  <td>ousmane.keita@ltpconstruction.com</td>
+                  <td><span class="status-badge danger"><i class="bi bi-circle-fill"></i>Suspendu</span></td>
+                  <td>5 novembre 2021</td>
+                  <td><button class="employee-action-btn" type="button" data-employee-details>Voir détails</button></td>
+                </tr>
+                <tr data-employee-name="Nene Toure" data-employee-role="Chargée commerciale" data-employee-department="Commercial" data-employee-phone="+224 627 12 64 55" data-employee-email="nene.toure@ltpconstruction.com" data-employee-status="Actif" data-employee-country="Guinée" data-employee-arrival="9 juin 2023" data-employee-departure="" data-employee-manager="Direction commerciale" data-employee-activity="Relance devis infrastructures le 14 mai 2026">
+                  <td><strong>Nene Toure</strong></td>
+                  <td>Chargée commerciale</td>
+                  <td>Commercial</td>
+                  <td>+224 627 12 64 55</td>
+                  <td>nene.toure@ltpconstruction.com</td>
+                  <td><span class="status-badge success"><i class="bi bi-circle-fill"></i>Actif</span></td>
+                  <td>9 juin 2023</td>
+                  <td><button class="employee-action-btn" type="button" data-employee-details>Voir détails</button></td>
+                </tr>
+                <tr data-employee-name="Moussa Condé" data-employee-role="Superviseur sécurité" data-employee-department="HSE" data-employee-phone="+224 624 88 51 20" data-employee-email="moussa.conde@ltpconstruction.com" data-employee-status="En congé" data-employee-country="Guinée" data-employee-arrival="21 avril 2020" data-employee-departure="" data-employee-manager="Aboubacar Sylla" data-employee-activity="Congé planifié après audit HSE du 8 mai 2026">
+                  <td><strong>Moussa Condé</strong></td>
+                  <td>Superviseur sécurité</td>
+                  <td>HSE</td>
+                  <td>+224 624 88 51 20</td>
+                  <td>moussa.conde@ltpconstruction.com</td>
+                  <td><span class="status-badge warning"><i class="bi bi-circle-fill"></i>En congé</span></td>
+                  <td>21 avril 2020</td>
+                  <td><button class="employee-action-btn" type="button" data-employee-details>Voir détails</button></td>
+                </tr>
+                <tr data-employee-name="Hadja Binta Soumah" data-employee-role="Responsable achats" data-employee-department="Achats" data-employee-phone="+224 623 17 40 83" data-employee-email="binta.soumah@ltpconstruction.com" data-employee-status="A quitté l’entreprise" data-employee-country="Guinée" data-employee-arrival="2 octobre 2019" data-employee-departure="30 avril 2025" data-employee-manager="Direction administrative" data-employee-activity="Dossier archivé après départ volontaire">
+                  <td><strong>Hadja Binta Soumah</strong></td>
+                  <td>Responsable achats</td>
+                  <td>Achats</td>
+                  <td>+224 623 17 40 83</td>
+                  <td>binta.soumah@ltpconstruction.com</td>
+                  <td><span class="status-badge neutral"><i class="bi bi-circle-fill"></i>A quitté l’entreprise</span></td>
+                  <td>2 octobre 2019</td>
+                  <td><button class="employee-action-btn" type="button" data-employee-details>Voir détails</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <div class="modal fade employee-modal" id="employeeDetailsModal" tabindex="-1" aria-labelledby="employeeDetailsTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <div>
+                  <span class="modal-kicker">Profil employé</span>
+                  <h3 class="modal-title" id="employeeDetailsTitle" data-employee-detail="name">Employé</h3>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+              </div>
+              <div class="modal-body">
+                <div class="employee-detail-grid">
+                  <article><span>Poste</span><strong data-employee-detail="role"></strong></article>
+                  <article><span>Département</span><strong data-employee-detail="department"></strong></article>
+                  <article><span>Pays</span><strong data-employee-detail="country"></strong></article>
+                  <article><span>Téléphone</span><strong data-employee-detail="phone"></strong></article>
+                  <article><span>Email professionnel</span><strong data-employee-detail="email"></strong></article>
+                  <article><span>Statut</span><strong data-employee-detail="status"></strong></article>
+                  <article><span>Date d’arrivée</span><strong data-employee-detail="arrival"></strong></article>
+                  <article><span>Date de départ</span><strong data-employee-detail="departure"></strong></article>
+                  <article><span>Responsable hiérarchique</span><strong data-employee-detail="manager"></strong></article>
+                  <article class="employee-detail-wide"><span>Dernière activité</span><strong data-employee-detail="activity"></strong></article>
+                </div>
+                <div class="employee-action-feedback employee-modal-feedback" data-employee-modal-feedback hidden></div>
+              </div>
+              <div class="modal-footer employee-modal-actions">
+                <button type="button" class="employee-action-btn" data-employee-action="Modifier">Modifier</button>
+                <button type="button" class="employee-action-btn" data-employee-action="Désactiver">Désactiver</button>
+                <button type="button" class="employee-action-btn" data-employee-action="Générer email pro">Générer email pro</button>
               </div>
             </div>
-            <ul class="check-list">
-              <li><i class="bi bi-check2"></i>Création de compte</li>
-              <li><i class="bi bi-check2"></i>Gestion des rôles</li>
-              <li><i class="bi bi-check2"></i>Réinitialisation accès</li>
-            </ul>
-          </article>
-        </section>
+          </div>
+        </div>
       </main>
     </div>
 

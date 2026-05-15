@@ -99,76 +99,283 @@
               <strong>Employés</strong>
             </nav>
             <h2>Employés</h2>
-            <p>Base de gestion des comptes internes. Interface prête à connecter aux données métier.</p>
+            <p>Annuaire interne fictif pour visualiser les équipes, les départements et les statuts RH de LTP Construction Cameroun.</p>
           </div>
           <div class="country-panel entity-cameroun">
             <span>Pays actif</span>
             <strong>Cameroun</strong>
+            <small>Douala · Yaoundé · Kribi</small>
           </div>
         </section>
 
         <section class="metrics-grid" aria-label="Indicateurs principaux">
-          <article class="metric-card">
-            <span class="metric-icon"><i class="bi bi-person-check"></i></span>
+          <article class="metric-card metric-card-stack">
+            <div class="metric-card-head">
+              <span class="metric-icon"><i class="bi bi-person-check"></i></span>
+              <span class="metric-chip success">Disponible</span>
+            </div>
             <div>
-              <strong>18</strong>
-              <span>Comptes actifs</span>
+              <strong>27</strong>
+              <span>Employés actifs</span>
+              <small>Ressources opérationnelles et administratives mobilisées sur les sites.</small>
             </div>
           </article>
-          <article class="metric-card">
-            <span class="metric-icon"><i class="bi bi-shield-lock"></i></span>
+          <article class="metric-card metric-card-stack">
+            <div class="metric-card-head">
+              <span class="metric-icon"><i class="bi bi-calendar2-week"></i></span>
+              <span class="metric-chip warning">RH</span>
+            </div>
             <div>
               <strong>3</strong>
-              <span>Rôles admin</span>
+              <span>En congé</span>
+              <small>Absences suivies avec relais prévu dans les départements clés.</small>
             </div>
           </article>
-          <article class="metric-card">
-            <span class="metric-icon"><i class="bi bi-person-plus"></i></span>
+          <article class="metric-card metric-card-stack">
+            <div class="metric-card-head">
+              <span class="metric-icon"><i class="bi bi-pause-circle"></i></span>
+              <span class="metric-chip warning">Suivi</span>
+            </div>
+            <div>
+              <strong>1</strong>
+              <span>Suspendu</span>
+              <small>Situation administrative isolée, conservée pour la démonstration.</small>
+            </div>
+          </article>
+          <article class="metric-card metric-card-stack">
+            <div class="metric-card-head">
+              <span class="metric-icon"><i class="bi bi-person-dash"></i></span>
+              <span class="metric-chip info">Historique</span>
+            </div>
             <div>
               <strong>2</strong>
-              <span>Invitations</span>
+              <span>Ont quitté l’entreprise</span>
+              <small>Anciens profils gardés visibles pour l’historique maquette.</small>
             </div>
           </article>
-          <article class="metric-card">
-            <span class="metric-icon"><i class="bi bi-diagram-3"></i></span>
+        </section>
+
+        <section class="module-card employees-card">
+          <div class="module-card-head employees-card-head">
+            <span class="module-icon"><i class="bi bi-people"></i></span>
             <div>
-              <strong>5</strong>
-              <span>Services</span>
+              <h3>Liste employés Cameroun</h3>
+              <p>Données fictives pour présenter la future gestion RH sans backend ni API.</p>
             </div>
-          </article>
+            <button class="employee-primary-action" type="button" data-employee-action="Ajouter employé">
+              <i class="bi bi-person-plus"></i>
+              <span>Ajouter employé</span>
+            </button>
+          </div>
+
+          <div class="employees-client-summary" aria-label="Synthèse employés">
+            <article>
+              <span>En entreprise</span>
+              <strong>31</strong>
+              <small>Actifs, en congé ou suspendus.</small>
+            </article>
+            <article>
+              <span>Ont quitté</span>
+              <strong>2</strong>
+              <small>Profils conservés en historique.</small>
+            </article>
+            <article>
+              <span>Emails pro</span>
+              <strong>10/10</strong>
+              <small>Comptes fictifs déjà visibles.</small>
+            </article>
+          </div>
+
+          <div class="employees-toolbar" aria-label="Filtres employés">
+            <label class="employees-search">
+              <i class="bi bi-search"></i>
+              <input type="search" placeholder="Nom, poste, email ou téléphone" aria-label="Rechercher un employé">
+            </label>
+            <div class="employees-controls">
+              <label>
+                <span>Statut</span>
+                <select class="employees-select" data-employee-status-filter>
+                  <option value="Tous">Tous les statuts</option>
+                  <option value="Actif">Actif</option>
+                  <option value="En congé">En congé</option>
+                  <option value="Suspendu">Suspendu</option>
+                  <option value="A quitté l’entreprise">A quitté l’entreprise</option>
+                </select>
+              </label>
+              <label>
+                <span>Département</span>
+                <select class="employees-select" data-employee-department-filter>
+                  <option value="Tous">Tous départements</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div class="employees-result-bar">
+            <span data-employee-count>10 employés affichés</span>
+            <strong>Pays : Cameroun</strong>
+          </div>
+          <div class="employee-action-feedback" data-employee-feedback hidden></div>
+          <div class="employees-empty-state" data-employee-empty hidden>
+            <i class="bi bi-search"></i>
+            <div>
+              <strong>Aucun employé trouvé</strong>
+              <span>Modifiez la recherche ou les filtres pour afficher des résultats.</span>
+            </div>
+          </div>
+
+          <div class="employees-table-wrap">
+            <table class="employees-table">
+              <thead>
+                <tr>
+                  <th>Nom complet</th>
+                  <th>Poste</th>
+                  <th>Département</th>
+                  <th>Téléphone</th>
+                  <th>Email professionnel</th>
+                  <th>Statut</th>
+                  <th>Date d’arrivée</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-employee-name="Jean Claude Mbarga" data-employee-role="Directeur des opérations" data-employee-department="Direction" data-employee-phone="+237 699 24 18 60" data-employee-email="jean.mbarga@ltpconstruction.com" data-employee-status="Actif" data-employee-country="Cameroun" data-employee-arrival="10 février 2021" data-employee-departure="" data-employee-manager="Direction générale Cameroun" data-employee-activity="Réunion opérationnelle Douala clôturée le 14 mai 2026">
+                  <td><strong>Jean Claude Mbarga</strong></td>
+                  <td>Directeur des opérations</td>
+                  <td>Direction</td>
+                  <td>+237 699 24 18 60</td>
+                  <td>jean.mbarga@ltpconstruction.com</td>
+                  <td><span class="status-badge success"><i class="bi bi-circle-fill"></i>Actif</span></td>
+                  <td>10 février 2021</td>
+                  <td><button class="employee-action-btn" type="button" data-employee-details>Voir détails</button></td>
+                </tr>
+                <tr data-employee-name="Grace Nlend" data-employee-role="Responsable administrative" data-employee-department="Administration" data-employee-phone="+237 677 81 44 29" data-employee-email="grace.nlend@ltpconstruction.com" data-employee-status="Actif" data-employee-country="Cameroun" data-employee-arrival="22 juillet 2022" data-employee-departure="" data-employee-manager="Jean Claude Mbarga" data-employee-activity="Validation du suivi administratif le 13 mai 2026">
+                  <td><strong>Grace Nlend</strong></td>
+                  <td>Responsable administrative</td>
+                  <td>Administration</td>
+                  <td>+237 677 81 44 29</td>
+                  <td>grace.nlend@ltpconstruction.com</td>
+                  <td><span class="status-badge success"><i class="bi bi-circle-fill"></i>Actif</span></td>
+                  <td>22 juillet 2022</td>
+                  <td><button class="employee-action-btn" type="button" data-employee-details>Voir détails</button></td>
+                </tr>
+                <tr data-employee-name="Patrick Fotso" data-employee-role="Chef de chantier" data-employee-department="Bâtiment" data-employee-phone="+237 690 36 72 15" data-employee-email="patrick.fotso@ltpconstruction.com" data-employee-status="Actif" data-employee-country="Cameroun" data-employee-arrival="6 avril 2020" data-employee-departure="" data-employee-manager="Jean Claude Mbarga" data-employee-activity="Compte rendu chantier Yaoundé transmis le 12 mai 2026">
+                  <td><strong>Patrick Fotso</strong></td>
+                  <td>Chef de chantier</td>
+                  <td>Bâtiment</td>
+                  <td>+237 690 36 72 15</td>
+                  <td>patrick.fotso@ltpconstruction.com</td>
+                  <td><span class="status-badge success"><i class="bi bi-circle-fill"></i>Actif</span></td>
+                  <td>6 avril 2020</td>
+                  <td><button class="employee-action-btn" type="button" data-employee-details>Voir détails</button></td>
+                </tr>
+                <tr data-employee-name="Carine Tchuisseu" data-employee-role="Chargée RH" data-employee-department="Ressources humaines" data-employee-phone="+237 656 12 95 33" data-employee-email="carine.tchuisseu@ltpconstruction.com" data-employee-status="En congé" data-employee-country="Cameroun" data-employee-arrival="15 janvier 2023" data-employee-departure="" data-employee-manager="Grace Nlend" data-employee-activity="Congé annuel enregistré jusqu’au 27 mai 2026">
+                  <td><strong>Carine Tchuisseu</strong></td>
+                  <td>Chargée RH</td>
+                  <td>Ressources humaines</td>
+                  <td>+237 656 12 95 33</td>
+                  <td>carine.tchuisseu@ltpconstruction.com</td>
+                  <td><span class="status-badge warning"><i class="bi bi-circle-fill"></i>En congé</span></td>
+                  <td>15 janvier 2023</td>
+                  <td><button class="employee-action-btn" type="button" data-employee-details>Voir détails</button></td>
+                </tr>
+                <tr data-employee-name="Samuel Ekambi" data-employee-role="Conducteur travaux" data-employee-department="Infrastructures" data-employee-phone="+237 698 40 63 21" data-employee-email="samuel.ekambi@ltpconstruction.com" data-employee-status="Actif" data-employee-country="Cameroun" data-employee-arrival="28 septembre 2021" data-employee-departure="" data-employee-manager="Jean Claude Mbarga" data-employee-activity="Planning infrastructures Kribi mis à jour le 13 mai 2026">
+                  <td><strong>Samuel Ekambi</strong></td>
+                  <td>Conducteur travaux</td>
+                  <td>Infrastructures</td>
+                  <td>+237 698 40 63 21</td>
+                  <td>samuel.ekambi@ltpconstruction.com</td>
+                  <td><span class="status-badge success"><i class="bi bi-circle-fill"></i>Actif</span></td>
+                  <td>28 septembre 2021</td>
+                  <td><button class="employee-action-btn" type="button" data-employee-details>Voir détails</button></td>
+                </tr>
+                <tr data-employee-name="Marthe Ngo Biyong" data-employee-role="Comptable" data-employee-department="Finance" data-employee-phone="+237 675 09 32 74" data-employee-email="marthe.ngo@ltpconstruction.com" data-employee-status="Actif" data-employee-country="Cameroun" data-employee-arrival="4 mai 2022" data-employee-departure="" data-employee-manager="Grace Nlend" data-employee-activity="Préparation synthèse dépenses chantier le 10 mai 2026">
+                  <td><strong>Marthe Ngo Biyong</strong></td>
+                  <td>Comptable</td>
+                  <td>Finance</td>
+                  <td>+237 675 09 32 74</td>
+                  <td>marthe.ngo@ltpconstruction.com</td>
+                  <td><span class="status-badge success"><i class="bi bi-circle-fill"></i>Actif</span></td>
+                  <td>4 mai 2022</td>
+                  <td><button class="employee-action-btn" type="button" data-employee-details>Voir détails</button></td>
+                </tr>
+                <tr data-employee-name="Arnaud Kengne" data-employee-role="Responsable matériel" data-employee-department="Logistique chantier" data-employee-phone="+237 693 58 17 08" data-employee-email="arnaud.kengne@ltpconstruction.com" data-employee-status="Suspendu" data-employee-country="Cameroun" data-employee-arrival="19 novembre 2021" data-employee-departure="" data-employee-manager="Jean Claude Mbarga" data-employee-activity="Compte accès suspendu pour contrôle interne le 7 mai 2026">
+                  <td><strong>Arnaud Kengne</strong></td>
+                  <td>Responsable matériel</td>
+                  <td>Logistique chantier</td>
+                  <td>+237 693 58 17 08</td>
+                  <td>arnaud.kengne@ltpconstruction.com</td>
+                  <td><span class="status-badge danger"><i class="bi bi-circle-fill"></i>Suspendu</span></td>
+                  <td>19 novembre 2021</td>
+                  <td><button class="employee-action-btn" type="button" data-employee-details>Voir détails</button></td>
+                </tr>
+                <tr data-employee-name="Estelle Mballa" data-employee-role="Chargée commerciale" data-employee-department="Commercial" data-employee-phone="+237 650 77 46 12" data-employee-email="estelle.mballa@ltpconstruction.com" data-employee-status="Actif" data-employee-country="Cameroun" data-employee-arrival="11 juin 2023" data-employee-departure="" data-employee-manager="Direction commerciale" data-employee-activity="Suivi devis bâtiment client public le 14 mai 2026">
+                  <td><strong>Estelle Mballa</strong></td>
+                  <td>Chargée commerciale</td>
+                  <td>Commercial</td>
+                  <td>+237 650 77 46 12</td>
+                  <td>estelle.mballa@ltpconstruction.com</td>
+                  <td><span class="status-badge success"><i class="bi bi-circle-fill"></i>Actif</span></td>
+                  <td>11 juin 2023</td>
+                  <td><button class="employee-action-btn" type="button" data-employee-details>Voir détails</button></td>
+                </tr>
+                <tr data-employee-name="Alain Nsame" data-employee-role="Superviseur HSE" data-employee-department="HSE" data-employee-phone="+237 679 25 88 91" data-employee-email="alain.nsame@ltpconstruction.com" data-employee-status="En congé" data-employee-country="Cameroun" data-employee-arrival="30 mars 2020" data-employee-departure="" data-employee-manager="Samuel Ekambi" data-employee-activity="Congé pris après inspection sécurité Kribi">
+                  <td><strong>Alain Nsame</strong></td>
+                  <td>Superviseur HSE</td>
+                  <td>HSE</td>
+                  <td>+237 679 25 88 91</td>
+                  <td>alain.nsame@ltpconstruction.com</td>
+                  <td><span class="status-badge warning"><i class="bi bi-circle-fill"></i>En congé</span></td>
+                  <td>30 mars 2020</td>
+                  <td><button class="employee-action-btn" type="button" data-employee-details>Voir détails</button></td>
+                </tr>
+                <tr data-employee-name="Brenda Moukoko" data-employee-role="Assistante achats" data-employee-department="Achats" data-employee-phone="+237 657 66 20 43" data-employee-email="brenda.moukoko@ltpconstruction.com" data-employee-status="A quitté l’entreprise" data-employee-country="Cameroun" data-employee-arrival="8 août 2019" data-employee-departure="15 décembre 2024" data-employee-manager="Grace Nlend" data-employee-activity="Dossier archivé après fin de contrat">
+                  <td><strong>Brenda Moukoko</strong></td>
+                  <td>Assistante achats</td>
+                  <td>Achats</td>
+                  <td>+237 657 66 20 43</td>
+                  <td>brenda.moukoko@ltpconstruction.com</td>
+                  <td><span class="status-badge neutral"><i class="bi bi-circle-fill"></i>A quitté l’entreprise</span></td>
+                  <td>8 août 2019</td>
+                  <td><button class="employee-action-btn" type="button" data-employee-details>Voir détails</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </section>
 
-        <section class="module-grid">
-          <article class="module-card module-card-main">
-            <div class="module-card-head">
-              <span class="module-icon"><i class="bi bi-people"></i></span>
-              <div>
-                <h3>Liste employés</h3>
-                <p>Structure visuelle prête pour les contenus du module.</p>
+        <div class="modal fade employee-modal" id="employeeDetailsModal" tabindex="-1" aria-labelledby="employeeDetailsTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <div>
+                  <span class="modal-kicker">Profil employé</span>
+                  <h3 class="modal-title" id="employeeDetailsTitle" data-employee-detail="name">Employé</h3>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+              </div>
+              <div class="modal-body">
+                <div class="employee-detail-grid">
+                  <article><span>Poste</span><strong data-employee-detail="role"></strong></article>
+                  <article><span>Département</span><strong data-employee-detail="department"></strong></article>
+                  <article><span>Pays</span><strong data-employee-detail="country"></strong></article>
+                  <article><span>Téléphone</span><strong data-employee-detail="phone"></strong></article>
+                  <article><span>Email professionnel</span><strong data-employee-detail="email"></strong></article>
+                  <article><span>Statut</span><strong data-employee-detail="status"></strong></article>
+                  <article><span>Date d’arrivée</span><strong data-employee-detail="arrival"></strong></article>
+                  <article><span>Date de départ</span><strong data-employee-detail="departure"></strong></article>
+                  <article><span>Responsable hiérarchique</span><strong data-employee-detail="manager"></strong></article>
+                  <article class="employee-detail-wide"><span>Dernière activité</span><strong data-employee-detail="activity"></strong></article>
+                </div>
+                <div class="employee-action-feedback employee-modal-feedback" data-employee-modal-feedback hidden></div>
+              </div>
+              <div class="modal-footer employee-modal-actions">
+                <button type="button" class="employee-action-btn" data-employee-action="Modifier">Modifier</button>
+                <button type="button" class="employee-action-btn" data-employee-action="Désactiver">Désactiver</button>
+                <button type="button" class="employee-action-btn" data-employee-action="Générer email pro">Générer email pro</button>
               </div>
             </div>
-            <ul class="module-list">
-              <li><span>Direction technique</span><em>Prévu</em></li>
-              <li><span>Administration</span><em>En attente</em></li>
-              <li><span>Commercial et relation client</span><em>À valider</em></li>
-            </ul>
-          </article>
-
-          <article class="module-card">
-            <div class="module-card-head compact">
-              <span class="module-icon muted"><i class="bi bi-ui-checks-grid"></i></span>
-              <div>
-                <h3>Accès prévus</h3>
-                <p>Repères fonctionnels.</p>
-              </div>
-            </div>
-            <ul class="check-list">
-              <li><i class="bi bi-check2"></i>Création de compte</li>
-              <li><i class="bi bi-check2"></i>Gestion des rôles</li>
-              <li><i class="bi bi-check2"></i>Réinitialisation accès</li>
-            </ul>
-          </article>
-        </section>
+          </div>
+        </div>
       </main>
     </div>
 
