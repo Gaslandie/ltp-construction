@@ -2099,6 +2099,50 @@ button, a { -webkit-tap-highlight-color: transparent; }
   line-height: 1.45;
 }
 
+.email-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.email-tech-grid article,
+.email-modal-tech article {
+  padding: 13px;
+  border-radius: 12px;
+  background: #fbfdff;
+  border: 1px solid #e7edf4;
+}
+
+.email-tech-grid span,
+.email-modal-tech span {
+  display: block;
+  color: #7b8aa0;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.email-tech-grid strong,
+.email-modal-tech strong {
+  display: block;
+  margin-top: 6px;
+  color: var(--admin-text);
+  font-size: 0.88rem;
+  font-weight: 900;
+  overflow-wrap: anywhere;
+}
+
+.email-tech-grid small {
+  display: block;
+  margin-top: 4px;
+  color: var(--admin-muted);
+  font-size: 0.74rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
 .email-action-feedback {
   margin-bottom: 14px;
   padding: 12px 14px;
@@ -2168,6 +2212,22 @@ button, a { -webkit-tap-highlight-color: transparent; }
   color: #7b8aa0;
   font-size: 0.72rem;
   font-weight: 800;
+}
+
+.email-pro-badge {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 7px;
+  padding: 4px 7px;
+  border-radius: 999px;
+  color: #1a5c3a;
+  background: rgba(47, 125, 92, 0.1);
+  border: 1px solid rgba(47, 125, 92, 0.18);
+  font-size: 0.66rem;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .email-table td:nth-child(2) {
@@ -2366,6 +2426,13 @@ button, a { -webkit-tap-highlight-color: transparent; }
   grid-column: 1 / -1;
 }
 
+.email-modal-tech {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
 .email-generated-box {
   padding: 14px;
   border-radius: 12px;
@@ -2386,6 +2453,59 @@ button, a { -webkit-tap-highlight-color: transparent; }
   gap: 8px;
   padding: 16px 22px 20px;
   border-top: 1px solid #e7edf4;
+}
+
+.email-activity-section {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid #e7edf4;
+}
+
+.email-activity-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.email-activity-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 13px;
+  border-radius: 12px;
+  background: var(--admin-soft);
+  border: 1px solid #e7edf4;
+}
+
+.email-activity-list i {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 30px;
+  border-radius: 10px;
+  color: var(--admin-blue);
+  background: rgba(11, 45, 77, 0.08);
+}
+
+.email-activity-list strong {
+  display: block;
+  color: var(--admin-text);
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.email-activity-list span {
+  display: block;
+  margin-top: 4px;
+  color: var(--admin-muted);
+  font-size: 0.74rem;
+  font-weight: 700;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
 }
 
 .module-grid {
@@ -2514,7 +2634,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .status-badge {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   padding: 6px 10px;
   border-radius: 999px;
   color: var(--admin-blue);
@@ -2524,6 +2644,13 @@ button, a { -webkit-tap-highlight-color: transparent; }
   font-weight: 800;
   white-space: nowrap;
 }
+
+.status-badge i {
+  flex: 0 0 auto;
+  font-size: 0.42rem;
+  line-height: 1;
+}
+
 .status-badge.success {
   color: #1a5c3a;
   background: rgba(47, 125, 92, 0.11);
@@ -2628,9 +2755,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .emails-card-head { align-items: flex-start; flex-direction: column; }
   .email-primary-action { width: 100%; }
   .email-provider-grid { grid-template-columns: 1fr; }
+  .email-tech-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .email-section-head { flex-direction: column; }
   .email-secondary-action { width: 100%; }
   .email-request-grid { grid-template-columns: 1fr; }
+  .email-activity-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .metrics-grid  { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .dashboard-hero-grid,
   .dashboard-detail-grid { grid-template-columns: 1fr; }
@@ -2698,6 +2827,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .employees-table { min-width: 1080px; }
   .email-table { min-width: 980px; }
   .email-create-form { grid-template-columns: 1fr; }
+  .email-tech-grid,
+  .email-modal-tech,
+  .email-activity-list { grid-template-columns: 1fr; }
   .traffic-chart { grid-template-columns: repeat(3, minmax(0, 1fr)); min-height: auto; }
   .traffic-bar-track { height: 120px; }
   .metrics-grid  { grid-template-columns: 1fr; }

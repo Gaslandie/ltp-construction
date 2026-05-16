@@ -27,16 +27,6 @@
           <i class="bi bi-x-lg"></i>
         </button>
       </div>
-
-      <div class="sidebar-entities">
-        <a href="../guinee/emails.html" class="entity-btn entity-guinee">
-          <i class="bi bi-geo-alt"></i> Guinée
-        </a>
-        <a href="../cameroun/emails.html" class="entity-btn entity-cameroun active" aria-current="true">
-          <i class="bi bi-geo-alt-fill"></i> Cameroun
-        </a>
-      </div>
-
       <nav class="sidebar-nav" aria-label="Navigation Cameroun">
         <a href="dashboard.html" class="sidebar-link" data-page="dashboard">
           <i class="bi bi-speedometer2"></i><span>Tableau de bord</span>
@@ -65,9 +55,6 @@
       </nav>
 
       <div class="sidebar-footer">
-        <a href="../index.html" class="sidebar-link sidebar-footer-link">
-          <i class="bi bi-house"></i><span>Accueil admin</span>
-        </a>
         <a href="../../index.html" class="sidebar-link sidebar-footer-link">
           <i class="bi bi-globe2"></i><span>Site public</span>
         </a>
@@ -188,6 +175,29 @@
             </article>
           </div>
 
+          <div class="email-tech-grid" aria-label="Détails techniques emails">
+            <article>
+              <span>Serveur</span>
+              <strong>mail.ltpconstruction.com</strong>
+              <small>IMAP 993 · SMTP 465</small>
+            </article>
+            <article>
+              <span>Webmail</span>
+              <strong>webmail.ltpconstruction.com</strong>
+              <small>Accès cPanel / Roundcube</small>
+            </article>
+            <article>
+              <span>Sécurité</span>
+              <strong>SSL actif</strong>
+              <small>SPF / DKIM à valider avant production</small>
+            </article>
+            <article>
+              <span>Mot de passe</span>
+              <strong>••••••••••••</strong>
+              <small>Réinitialisation simulée uniquement</small>
+            </article>
+          </div>
+
           <div class="email-action-feedback" data-email-feedback hidden></div>
 
           <div class="email-table-wrap">
@@ -206,7 +216,7 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><strong>Jean Claude Mbarga</strong><span>Email employé</span></td>
+                  <td><strong>Jean Claude Mbarga</strong><span>Email employé</span><em class="email-pro-badge">Email pro actif</em></td>
                   <td>jean.mbarga@ltpconstruction.com</td>
                   <td>Direction</td>
                   <td>Cameroun</td>
@@ -216,7 +226,7 @@
                   <td><button class="email-action-btn" type="button" data-email-action="Gérer Jean Claude Mbarga">Gérer</button></td>
                 </tr>
                 <tr>
-                  <td><strong>Grace Nlend</strong><span>Email employé</span></td>
+                  <td><strong>Grace Nlend</strong><span>Email employé</span><em class="email-pro-badge">Email pro actif</em></td>
                   <td>grace.nlend@ltpconstruction.com</td>
                   <td>Administration</td>
                   <td>Cameroun</td>
@@ -226,7 +236,7 @@
                   <td><button class="email-action-btn" type="button" data-email-action="Gérer Grace Nlend">Gérer</button></td>
                 </tr>
                 <tr>
-                  <td><strong>Patrick Fotso</strong><span>Email employé</span></td>
+                  <td><strong>Patrick Fotso</strong><span>Email employé</span><em class="email-pro-badge">Email pro actif</em></td>
                   <td>patrick.fotso@ltpconstruction.com</td>
                   <td>Bâtiment</td>
                   <td>Cameroun</td>
@@ -355,6 +365,22 @@
               </article>
             </div>
           </section>
+
+          <section class="email-activity-section" aria-label="Historique activité email">
+            <div class="email-section-head">
+              <div>
+                <h3>Historique activité</h3>
+                <p>Journal fictif pour montrer le futur suivi de l’infrastructure email.</p>
+              </div>
+            </div>
+            <ul class="email-activity-list">
+              <li><i class="bi bi-envelope-check"></i><div><strong>Email créé</strong><span>jean.mbarga@ltpconstruction.com · Aujourd’hui 08:50</span></div></li>
+              <li><i class="bi bi-shield-lock"></i><div><strong>Compte suspendu</strong><span>arnaud.kengne@ltpconstruction.com · 7 mai 2026</span></div></li>
+              <li><i class="bi bi-person-plus"></i><div><strong>Demande RH</strong><span>c.tchuisseu@ltpconstruction.com · en attente de validation</span></div></li>
+              <li><i class="bi bi-hdd"></i><div><strong>Quota augmenté</strong><span>direction@ltpconstruction.com · 20 Go vers 25 Go</span></div></li>
+              <li><i class="bi bi-globe2"></i><div><strong>Connexion webmail</strong><span>contact@ltpconstruction.com · Roundcube cPanel</span></div></li>
+            </ul>
+          </section>
         </section>
 
         <div class="modal fade email-create-modal" id="emailCreateModal" tabindex="-1" aria-labelledby="emailCreateTitle" aria-hidden="true">
@@ -405,6 +431,12 @@
                   <div class="email-generated-box">
                     <span>Email généré automatiquement</span>
                     <strong data-generated-email>m.diallo@ltpconstruction.com</strong>
+                  </div>
+                  <div class="email-modal-tech">
+                    <article><span>Serveur</span><strong>mail.ltpconstruction.com</strong></article>
+                    <article><span>Webmail</span><strong>webmail.ltpconstruction.com</strong></article>
+                    <article><span>Sécurité</span><strong>SSL + mot de passe fort</strong></article>
+                    <article><span>Mot de passe initial</span><strong>••••••••••••</strong></article>
                   </div>
                   <div class="email-action-feedback email-modal-feedback" data-email-create-feedback hidden></div>
                 </form>
