@@ -99,76 +99,323 @@
               <strong>Emails</strong>
             </nav>
             <h2>Emails</h2>
-            <p>Suivi des emails professionnels et boîtes internes. Interface prête à connecter aux données métier.</p>
+            <p>Gestion fictive des adresses professionnelles LTP Construction Cameroun, avec suivi des comptes employés, boîtes générales et demandes en attente.</p>
           </div>
           <div class="country-panel entity-cameroun">
             <span>Pays actif</span>
             <strong>Cameroun</strong>
+            <small>Bluehost / cPanel · Domaine ltpconstruction.com</small>
           </div>
         </section>
 
         <section class="metrics-grid" aria-label="Indicateurs principaux">
-          <article class="metric-card">
-            <span class="metric-icon"><i class="bi bi-envelope-check"></i></span>
+          <article class="metric-card metric-card-stack">
+            <div class="metric-card-head">
+              <span class="metric-icon"><i class="bi bi-envelope-check"></i></span>
+              <span class="metric-chip success">Opérationnel</span>
+            </div>
             <div>
-              <strong>14</strong>
-              <span>Boîtes emails</span>
+              <strong>7</strong>
+              <span>Emails actifs</span>
+              <small>Boîtes employé et adresses générales disponibles pour l’équipe Cameroun.</small>
             </div>
           </article>
-          <article class="metric-card">
-            <span class="metric-icon"><i class="bi bi-gear"></i></span>
-            <div>
-              <strong>3</strong>
-              <span>À configurer</span>
+          <article class="metric-card metric-card-stack">
+            <div class="metric-card-head">
+              <span class="metric-icon"><i class="bi bi-hourglass-split"></i></span>
+              <span class="metric-chip warning">À valider</span>
             </div>
-          </article>
-          <article class="metric-card">
-            <span class="metric-icon"><i class="bi bi-at"></i></span>
-            <div>
-              <strong>9</strong>
-              <span>Aliases</span>
-            </div>
-          </article>
-          <article class="metric-card">
-            <span class="metric-icon"><i class="bi bi-headset"></i></span>
             <div>
               <strong>1</strong>
-              <span>Support</span>
+              <span>Demande en attente</span>
+              <small>Création à confirmer après validation RH ou direction locale.</small>
+            </div>
+          </article>
+          <article class="metric-card metric-card-stack">
+            <div class="metric-card-head">
+              <span class="metric-icon"><i class="bi bi-pause-circle"></i></span>
+              <span class="metric-chip warning">Suivi</span>
+            </div>
+            <div>
+              <strong>1</strong>
+              <span>Compte suspendu</span>
+              <small>Compte conservé mais accès bloqué dans la maquette.</small>
+            </div>
+          </article>
+          <article class="metric-card metric-card-stack">
+            <div class="metric-card-head">
+              <span class="metric-icon"><i class="bi bi-hdd"></i></span>
+              <span class="metric-chip info">cPanel</span>
+            </div>
+            <div>
+              <strong>21,9 Go</strong>
+              <span>Stockage utilisé</span>
+              <small>Volume fictif estimé sur les boîtes professionnelles Cameroun.</small>
             </div>
           </article>
         </section>
 
-        <section class="module-grid">
-          <article class="module-card module-card-main">
-            <div class="module-card-head">
-              <span class="module-icon"><i class="bi bi-envelope"></i></span>
-              <div>
-                <h3>Boîtes professionnelles</h3>
-                <p>Structure visuelle prête pour les contenus du module.</p>
-              </div>
-            </div>
-            <ul class="module-list">
-              <li><span>contact@ltpconstruction...</span><em>Prévu</em></li>
-              <li><span>devis@ltpconstruction...</span><em>En attente</em></li>
-              <li><span>support interne</span><em>À valider</em></li>
-            </ul>
-          </article>
-
-          <article class="module-card">
+        <section class="module-card emails-card">
+          <div class="emails-card-head">
             <div class="module-card-head compact">
-              <span class="module-icon muted"><i class="bi bi-ui-checks-grid"></i></span>
+              <span class="module-icon"><i class="bi bi-envelope-at"></i></span>
               <div>
-                <h3>Gestion prévue</h3>
-                <p>Repères fonctionnels.</p>
+                <h3>Boîtes emails Cameroun</h3>
+                <p>Vue statique pour présenter la gestion des adresses professionnelles et comptes génériques.</p>
               </div>
             </div>
-            <ul class="check-list">
-              <li><i class="bi bi-check2"></i>Création adresse</li>
-              <li><i class="bi bi-check2"></i>Affectation employé</li>
-              <li><i class="bi bi-check2"></i>Suivi statut boîte</li>
-            </ul>
-          </article>
+            <button class="email-primary-action" type="button" data-email-action="Nouvelle demande email">
+              <i class="bi bi-plus-lg"></i>
+              <span>Nouvelle demande</span>
+            </button>
+          </div>
+
+          <div class="email-provider-grid" aria-label="Contexte technique emails">
+            <article class="email-provider-card current">
+              <span>Fournisseur actuel</span>
+              <strong>Bluehost / cPanel</strong>
+              <small>Gestion des boîtes via hébergement actuel, sans synchronisation backend dans cette maquette.</small>
+            </article>
+            <article class="email-provider-card">
+              <span>Option future</span>
+              <strong>Google Workspace</strong>
+              <small>Migration possible pour Gmail professionnel, agendas et stockage cloud.</small>
+            </article>
+            <article class="email-provider-card">
+              <span>Option future</span>
+              <strong>Microsoft 365</strong>
+              <small>Alternative possible pour Outlook, Teams et gestion centralisée.</small>
+            </article>
+          </div>
+
+          <div class="email-action-feedback" data-email-feedback hidden></div>
+
+          <div class="email-table-wrap">
+            <table class="email-table">
+              <thead>
+                <tr>
+                  <th>Nom</th>
+                  <th>Email</th>
+                  <th>Département</th>
+                  <th>Pays</th>
+                  <th>Statut</th>
+                  <th>Quota</th>
+                  <th>Dernière activité</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Jean Claude Mbarga</strong><span>Email employé</span></td>
+                  <td>jean.mbarga@ltpconstruction.com</td>
+                  <td>Direction</td>
+                  <td>Cameroun</td>
+                  <td><span class="status-badge success"><i class="bi bi-circle-fill"></i>Actif</span></td>
+                  <td>2 Go / 10 Go</td>
+                  <td>Aujourd’hui · 08:50</td>
+                  <td><button class="email-action-btn" type="button" data-email-action="Gérer Jean Claude Mbarga">Gérer</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Grace Nlend</strong><span>Email employé</span></td>
+                  <td>grace.nlend@ltpconstruction.com</td>
+                  <td>Administration</td>
+                  <td>Cameroun</td>
+                  <td><span class="status-badge success"><i class="bi bi-circle-fill"></i>Actif</span></td>
+                  <td>1,7 Go / 10 Go</td>
+                  <td>Hier · 17:05</td>
+                  <td><button class="email-action-btn" type="button" data-email-action="Gérer Grace Nlend">Gérer</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Patrick Fotso</strong><span>Email employé</span></td>
+                  <td>patrick.fotso@ltpconstruction.com</td>
+                  <td>Bâtiment</td>
+                  <td>Cameroun</td>
+                  <td><span class="status-badge success"><i class="bi bi-circle-fill"></i>Actif</span></td>
+                  <td>1,4 Go / 5 Go</td>
+                  <td>13 mai 2026 · 10:15</td>
+                  <td><button class="email-action-btn" type="button" data-email-action="Réinitialiser Patrick Fotso">Réinitialiser</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Carine Tchuisseu</strong><span>Email employé</span></td>
+                  <td>carine.tchuisseu@ltpconstruction.com</td>
+                  <td>Ressources humaines</td>
+                  <td>Cameroun</td>
+                  <td><span class="status-badge warning"><i class="bi bi-circle-fill"></i>En attente</span></td>
+                  <td>0 Go / 5 Go</td>
+                  <td>Demande créée · 12 mai 2026</td>
+                  <td><button class="email-action-btn" type="button" data-email-action="Valider Carine Tchuisseu">Valider</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Arnaud Kengne</strong><span>Email employé</span></td>
+                  <td>arnaud.kengne@ltpconstruction.com</td>
+                  <td>Logistique chantier</td>
+                  <td>Cameroun</td>
+                  <td><span class="status-badge danger"><i class="bi bi-circle-fill"></i>Suspendu</span></td>
+                  <td>3,2 Go / 5 Go</td>
+                  <td>Accès bloqué · 7 mai 2026</td>
+                  <td><button class="email-action-btn" type="button" data-email-action="Réactiver Arnaud Kengne">Réactiver</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Contact Cameroun</strong><span>Email général</span></td>
+                  <td>contact@ltpconstruction.com</td>
+                  <td>Accueil / Relation client</td>
+                  <td>Cameroun</td>
+                  <td><span class="status-badge success"><i class="bi bi-circle-fill"></i>Actif</span></td>
+                  <td>4,1 Go / 20 Go</td>
+                  <td>Aujourd’hui · 09:30</td>
+                  <td><button class="email-action-btn" type="button" data-email-action="Consulter contact Cameroun">Consulter</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Devis Cameroun</strong><span>Email général</span></td>
+                  <td>devis@ltpconstruction.com</td>
+                  <td>Commercial</td>
+                  <td>Cameroun</td>
+                  <td><span class="status-badge success"><i class="bi bi-circle-fill"></i>Actif</span></td>
+                  <td>2,5 Go / 20 Go</td>
+                  <td>Hier · 12:25</td>
+                  <td><button class="email-action-btn" type="button" data-email-action="Consulter devis Cameroun">Consulter</button></td>
+                </tr>
+                <tr>
+                  <td><strong>RH Cameroun</strong><span>Email général</span></td>
+                  <td>rh@ltpconstruction.com</td>
+                  <td>Ressources humaines</td>
+                  <td>Cameroun</td>
+                  <td><span class="status-badge success"><i class="bi bi-circle-fill"></i>Actif</span></td>
+                  <td>1,1 Go / 10 Go</td>
+                  <td>10 mai 2026 · 15:10</td>
+                  <td><button class="email-action-btn" type="button" data-email-action="Consulter RH Cameroun">Consulter</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Direction Cameroun</strong><span>Email général</span></td>
+                  <td>direction@ltpconstruction.com</td>
+                  <td>Direction</td>
+                  <td>Cameroun</td>
+                  <td><span class="status-badge success"><i class="bi bi-circle-fill"></i>Actif</span></td>
+                  <td>5,5 Go / 25 Go</td>
+                  <td>Aujourd’hui · 07:55</td>
+                  <td><button class="email-action-btn" type="button" data-email-action="Sécuriser direction Cameroun">Sécuriser</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Support Cameroun</strong><span>Email général</span></td>
+                  <td>support@ltpconstruction.com</td>
+                  <td>Support</td>
+                  <td>Cameroun</td>
+                  <td><span class="status-badge neutral"><i class="bi bi-circle-fill"></i>Désactivé</span></td>
+                  <td>0,4 Go / 5 Go</td>
+                  <td>Archivé · 30 avril 2026</td>
+                  <td><button class="email-action-btn" type="button" data-email-action="Réactiver support Cameroun">Réactiver</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <section class="email-requests-section" aria-label="Demandes de création">
+            <div class="email-section-head">
+              <div>
+                <h3>Demandes de création</h3>
+                <p>Simulation du flux de validation avant création d’une adresse professionnelle.</p>
+              </div>
+              <button class="email-secondary-action" type="button" data-email-open-create>
+                <i class="bi bi-envelope-plus"></i>
+                <span>Créer email professionnel</span>
+              </button>
+            </div>
+
+            <div class="email-request-grid">
+              <article class="email-request-card" data-request-name="Carine Tchuisseu" data-request-email="c.tchuisseu@ltpconstruction.com">
+                <div class="email-request-top">
+                  <div>
+                    <strong>Carine Tchuisseu</strong>
+                    <span>c.tchuisseu@ltpconstruction.com</span>
+                  </div>
+                  <span class="status-badge warning"><i class="bi bi-circle-fill"></i>En attente</span>
+                </div>
+                <p>Chargée RH · Ressources humaines · Quota demandé : 5 Go</p>
+                <div class="email-request-actions">
+                  <button type="button" data-email-request-action="Approuver">Approuver</button>
+                  <button type="button" data-email-request-action="Refuser">Refuser</button>
+                  <button type="button" data-email-request-action="Voir détails">Voir détails</button>
+                </div>
+              </article>
+
+              <article class="email-request-card" data-request-name="Estelle Mballa" data-request-email="e.mballa@ltpconstruction.com">
+                <div class="email-request-top">
+                  <div>
+                    <strong>Estelle Mballa</strong>
+                    <span>e.mballa@ltpconstruction.com</span>
+                  </div>
+                  <span class="status-badge warning"><i class="bi bi-circle-fill"></i>En attente</span>
+                </div>
+                <p>Chargée commerciale · Commercial · Quota demandé : 10 Go</p>
+                <div class="email-request-actions">
+                  <button type="button" data-email-request-action="Approuver">Approuver</button>
+                  <button type="button" data-email-request-action="Refuser">Refuser</button>
+                  <button type="button" data-email-request-action="Voir détails">Voir détails</button>
+                </div>
+              </article>
+            </div>
+          </section>
         </section>
+
+        <div class="modal fade email-create-modal" id="emailCreateModal" tabindex="-1" aria-labelledby="emailCreateTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <div>
+                  <span class="modal-kicker">Création fictive</span>
+                  <h3 class="modal-title" id="emailCreateTitle">Créer email professionnel</h3>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+              </div>
+              <div class="modal-body">
+                <form class="email-create-form" data-email-create-form data-email-country="Cameroun">
+                  <label>
+                    <span>Prénom</span>
+                    <input type="text" name="firstName" value="Mamadou" autocomplete="off">
+                  </label>
+                  <label>
+                    <span>Nom</span>
+                    <input type="text" name="lastName" value="Diallo" autocomplete="off">
+                  </label>
+                  <label>
+                    <span>Département</span>
+                    <select name="department">
+                      <option>Direction</option>
+                      <option>Administration</option>
+                      <option>Commercial</option>
+                      <option>Ressources humaines</option>
+                    </select>
+                  </label>
+                  <label>
+                    <span>Pays</span>
+                    <input type="text" name="country" value="Cameroun" readonly>
+                  </label>
+                  <label>
+                    <span>Rôle</span>
+                    <input type="text" name="role" value="Chef de chantier" autocomplete="off">
+                  </label>
+                  <label>
+                    <span>Quota stockage</span>
+                    <select name="quota">
+                      <option>5 Go</option>
+                      <option selected>10 Go</option>
+                      <option>20 Go</option>
+                    </select>
+                  </label>
+                  <div class="email-generated-box">
+                    <span>Email généré automatiquement</span>
+                    <strong data-generated-email>m.diallo@ltpconstruction.com</strong>
+                  </div>
+                  <div class="email-action-feedback email-modal-feedback" data-email-create-feedback hidden></div>
+                </form>
+              </div>
+              <div class="modal-footer email-modal-actions">
+                <button type="button" class="email-action-btn" data-email-generate>Générer</button>
+                <button type="button" class="email-action-btn" data-email-save-request>Enregistrer demande</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
 

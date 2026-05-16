@@ -514,6 +514,112 @@
     });
   }
 
+  function initEmailActions() {
+    var feedbackNode = document.querySelector('[data-email-feedback]');
+    var actionButtons = Array.prototype.slice.call(document.querySelectorAll('[data-email-action]'));
+    var requestButtons = Array.prototype.slice.call(document.querySelectorAll('[data-email-request-action]'));
+    var openCreateButtons = Array.prototype.slice.call(document.querySelectorAll('[data-email-open-create]'));
+    var createModalEl = document.getElementById('emailCreateModal');
+    var createForm = document.querySelector('[data-email-create-form]');
+    var generatedEmailNode = document.querySelector('[data-generated-email]');
+    var createFeedbackNode = document.querySelector('[data-email-create-feedback]');
+    var generateButton = document.querySelector('[data-email-generate]');
+    var saveRequestButton = document.querySelector('[data-email-save-request]');
+    var createModal = createModalEl && window.bootstrap && window.bootstrap.Modal
+      ? new window.bootstrap.Modal(createModalEl)
+      : null;
+
+    if (!feedbackNode) return;
+
+    function slugifyEmailPart(value) {
+      return normalizeText(value)
+        .replace(/[^a-z0-9]+/g, '.')
+        .replace(/^\.+|\.+$/g, '');
+    }
+
+    function generateEmail() {
+      if (!createForm || !generatedEmailNode) return '';
+
+      var firstName = slugifyEmailPart(createForm.elements.firstName.value);
+      var lastName = slugifyEmailPart(createForm.elements.lastName.value);
+      var initial = firstName ? firstName.charAt(0) : 'x';
+      var namePart = lastName || 'utilisateur';
+      var email = initial + '.' + namePart + '@ltpconstruction.com';
+
+      generatedEmailNode.textContent = email;
+      return email;
+    }
+
+    function showFeedback(message) {
+      feedbackNode.textContent = message;
+      feedbackNode.hidden = false;
+    }
+
+    function showCreateFeedback(message) {
+      if (!createFeedbackNode) return;
+      createFeedbackNode.textContent = message;
+      createFeedbackNode.hidden = false;
+    }
+
+    actionButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        var action = button.dataset.emailAction || 'Action email';
+        showFeedback(action + ' : action fictive prête pour la future gestion email. Aucune donnée n’a été enregistrée.');
+      });
+    });
+
+    requestButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        var card = button.closest('.email-request-card');
+        var action = button.dataset.emailRequestAction || 'Action';
+        var requestName = card ? card.dataset.requestName : 'la demande';
+        var requestEmail = card ? card.dataset.requestEmail : '';
+        var badge = card ? card.querySelector('.status-badge') : null;
+
+        if (badge && action === 'Approuver') {
+          badge.className = 'status-badge success';
+          badge.innerHTML = '<i class="bi bi-circle-fill"></i>Approuvé';
+        }
+
+        if (badge && action === 'Refuser') {
+          badge.className = 'status-badge danger';
+          badge.innerHTML = '<i class="bi bi-circle-fill"></i>Refusé';
+        }
+
+        showFeedback(action + ' : ' + requestName + (requestEmail ? ' · ' + requestEmail : '') + '. Simulation locale, aucune création cPanel.');
+      });
+    });
+
+    openCreateButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        generateEmail();
+        if (createFeedbackNode) {
+          createFeedbackNode.hidden = true;
+          createFeedbackNode.textContent = '';
+        }
+        if (createModal) createModal.show();
+      });
+    });
+
+    if (createForm) {
+      ['firstName', 'lastName'].forEach(function (fieldName) {
+        var field = createForm.elements[fieldName];
+        if (field) field.addEventListener('input', generateEmail);
+      });
+    }
+
+    generateButton && generateButton.addEventListener('click', function () {
+      var email = generateEmail();
+      showCreateFeedback(email + ' généré automatiquement. Aucune boîte réelle créée.');
+    });
+
+    saveRequestButton && saveRequestButton.addEventListener('click', function () {
+      var email = generateEmail();
+      showCreateFeedback('Demande enregistrée fictivement pour ' + email + '. Validation cPanel à connecter plus tard.');
+      showFeedback('Nouvelle demande email simulée : ' + email + '. Aucune API cPanel appelée.');
+    });
+  }
+
   var activeSession = enforceSessionAccess();
 
   bindSessionGuards();
@@ -576,6 +682,7 @@
 
   bindLogoutLinks();
   initEmployeesTableFilters();
+  initEmailActions();
 
   document.querySelectorAll('.module-list em').forEach(function (badge, index) {
     var labels = ['Prévu', 'En attente', 'À valider', 'Brouillon'];
